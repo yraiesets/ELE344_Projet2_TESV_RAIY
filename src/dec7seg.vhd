@@ -5,7 +5,7 @@
 -- =============================================================
 -- Description: Décodeur 7-segment Alpha-numérique pour DE-2
 -- =============================================================
-
+-- Test
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
