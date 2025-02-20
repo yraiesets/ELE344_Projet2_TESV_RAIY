@@ -8,3 +8,229 @@ z2
 !i10f 100
 cModel Technology
 dC:/Utilities/ModelSim/intelFPGA/20.1
+Edec7seg
+Z0 w1739459322
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY
+Z4 8C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd
+Z5 FC:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd
+l0
+L12
+V>8k;5m2>3kFN]9X5<WkAl0
+!s100 d8IF9YbiMmZo5?[KKU2Se2
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1740068657
+!i10b 1
+Z8 !s108 1740068657.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-stats=none|C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd|
+Z10 !s107 C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd|
+!i113 1
+Z11 o-work work -2002
+Z12 tExplicit 1 CvgOpt 0
+Adec7seg_archi
+R1
+R2
+DEx4 work 7 dec7seg 0 22 >8k;5m2>3kFN]9X5<WkAl0
+l19
+L18
+V@GFb@>IB[b7REaWfOhQH@3
+!s100 da=Pb5@6B[F0LU1iaTo@G0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edmem
+Z13 w1739459165
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R1
+R2
+Z15 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+R3
+Z16 8C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/dmem.vhd
+Z17 FC:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/dmem.vhd
+l0
+L17
+V<J9dV`z3[:E9HcL2l8ob80
+!s100 ZCg9=A:N4Vo9<SIIMFLL_0
+R6
+32
+R7
+!i10b 1
+R8
+Z18 !s90 -reportprogress|300|-work|work|-2002|-stats=none|C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/dmem.vhd|
+Z19 !s107 C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/dmem.vhd|
+!i113 1
+R11
+R12
+Admem_arch
+R14
+R1
+R2
+R15
+DEx4 work 4 dmem 0 22 <J9dV`z3[:E9HcL2l8ob80
+l33
+L24
+V5Lmbzk3bJEg0AESg:9SQ=0
+!s100 l_1m9XWkbQ[C`B<_W_BPd3
+R6
+32
+R7
+!i10b 1
+R8
+R18
+R19
+!i113 1
+R11
+R12
+Eimem
+Z20 w1740066178
+R14
+R1
+R2
+R3
+Z21 8C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/imem.vhd
+Z22 FC:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/imem.vhd
+l0
+L15
+VM4U3omIQZgRY5d_gNOEfj2
+!s100 Q1VLMchO0PoNC16DOfOch2
+R6
+32
+Z23 !s110 1740068658
+!i10b 1
+Z24 !s108 1740068658.000000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-stats=none|C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/imem.vhd|
+Z26 !s107 C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/imem.vhd|
+!i113 1
+R11
+R12
+Aimem_arch
+R14
+R1
+R2
+Z27 DEx4 work 4 imem 0 22 M4U3omIQZgRY5d_gNOEfj2
+l49
+L21
+Z28 VZ;1P;>fE]aO>Q0ZA^Sd2H2
+Z29 !s100 Vee_l]Hn[2mRbhDKO>ij;1
+R6
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R11
+R12
+Eregfile
+R13
+R14
+R1
+R2
+R3
+Z30 8C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/regfile.vhd
+Z31 FC:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/regfile.vhd
+l0
+L17
+VVdahVbMANY:O@kIzk7`RT1
+!s100 73N?_3S2S:gN^e96Lk2d_0
+R6
+32
+Z32 !s110 1740068656
+!i10b 1
+Z33 !s108 1740068656.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-stats=none|C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/regfile.vhd|
+Z35 !s107 C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/regfile.vhd|
+!i113 1
+R11
+R12
+Aregfile_arch
+R14
+R1
+R2
+DEx4 work 7 regfile 0 22 VdahVbMANY:O@kIzk7`RT1
+l28
+L25
+VF<C39H<^NCEG1n^Yfk2P:3
+!s100 mJCA2cEOP=N2aUY[i:c2m0
+R6
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R11
+R12
+Etop_fpga
+R13
+R1
+R2
+R3
+8C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd
+FC:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd
+l0
+L18
+VHbRM0Z1CL;z:hNS3BhMzb1
+!s100 HCi]mUc4Qz5V^9mf^Hm7o0
+R6
+32
+R7
+!i10b 1
+R8
+!s90 -reportprogress|300|-work|work|-2002|-stats=none|C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd|
+!s107 C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd|
+!i113 1
+R11
+R12
+Eual
+Z36 w1740066710
+R14
+R1
+R2
+R3
+Z37 8C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/ual.vhd
+Z38 FC:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/ual.vhd
+l0
+L18
+VV?ePVnQnBCTQ5H^`z0T5@1
+!s100 ?FB[=EfK0dmjThzzH?]?O3
+R6
+32
+R7
+!i10b 1
+R8
+Z39 !s90 -reportprogress|300|-work|work|-2002|-stats=none|C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/ual.vhd|
+Z40 !s107 C:/Users/Vinny/Desktop/ETS/Hiver 2025/ELE344/Projet2/ELE344_Projet2_TESV_RAIY/src/ual.vhd|
+!i113 1
+R11
+R12
+Artl
+R14
+R1
+R2
+DEx4 work 3 ual 0 22 V?ePVnQnBCTQ5H^`z0T5@1
+l35
+L28
+Vhz4H>NdoSQ@HXeBNVbdO93
+!s100 7N0bo1W@k8eae0;Ho6DGV3
+R6
+32
+R7
+!i10b 1
+R8
+R39
+R40
+!i113 1
+R11
+R12
