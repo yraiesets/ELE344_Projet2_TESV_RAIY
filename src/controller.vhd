@@ -6,6 +6,7 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY CONTROLLER IS
+
 	PORT (
 		OP, Funct    : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
 		MemtoReg     : OUT STD_LOGIC;
@@ -18,6 +19,7 @@ ENTITY CONTROLLER IS
 		Jump         : OUT STD_LOGIC;
 		AluControl   : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
+
 END CONTROLLER;
 
 ARCHITECTURE rtl OF CONTROLLER IS
@@ -109,14 +111,24 @@ BEGIN
 
 	END PROCESS;
 
-	ALUDecoder : PROCESS(ALUOp)
+	ALUDecoder : PROCESS(ALUOp, Funct)
 
 	BEGIN
 		
-		CASE(Funct) IS
+		CASE(ALUOp) IS
+
+			WHEN "00"	=>	AluControl	<=	"0100";
+			WHEN "01"	=>	AluControl	<=	"0110";
+			WHEN OTHERS	=>
+						CASE(Funct) IS
+							WHEN "100000"	=>	AluControl	<=	"0010";
+							WHEN "100010"	=>	AluControl	<=	"0110";
+							WHEN "100100"	=>	AluControl	<=	"0000";
+							WHEN "100101"	=>	AluControl	<=	"0001";
+							WHEN OTHERS	=>	AluControl	<=	"0111";
+						END CASE;
 		END CASE;
 
-		
 	END PROCESS;
 
 END rtl;
