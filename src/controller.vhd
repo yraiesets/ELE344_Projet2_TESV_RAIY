@@ -12,7 +12,7 @@ ENTITY CONTROLLER IS
 		MemWrite     : OUT STD_LOGIC;
 		MemRead      : OUT STD_LOGIC;
 		Branch       : OUT STD_LOGIC;
-		ALUSrc       : OUT STD_LOGIC;
+		AluSrc       : OUT STD_LOGIC;
 		RegDst       : OUT STD_LOGIC;
 		RegWrite     : OUT STD_LOGIC;
 		Jump         : OUT STD_LOGIC;
@@ -22,90 +22,100 @@ END CONTROLLER;
 
 ARCHITECTURE rtl OF CONTROLLER IS
 
-	SIGNAL MtoReg, MemW, MemR, MRead, Bran, ALUS, RegD, RegW, J : STD_LOGIC;
-	SIGNAL ALUCode : STD_LOGIC_VECTOR(1 DOWNTO 0);
+	-- Signal Interne pour le AluDecoder
+	SIGNAL ALUOp : STD_LOGIC_VECTOR(1 DOWNTO 0);
 
 BEGIN
 
-	MainDecoder : PROCESS (OP, MtoReg, MemW, MemR, MRead, Bran, ALUS, RegD, RegW, J, ALUCode)
+	MainDecoder : PROCESS (OP)
+
 	BEGIN
+
 		CASE (OP) IS
-			WHEN "000000" =>  -- R-Type
-				RegW    <= '1';
-				RegD    <= '1';
-				ALUS    <= '0';
-				Bran    <= '0';
-				MemR    <= '0';
-				MemW    <= '0';
-				MtoReg  <= '0';
-				ALUCode <= "10";
-				J       <= '0';
-				-- HexCode => X"304"
 
-			WHEN "100011" =>  -- Lw
-				RegW    <= '1';
-				RegD    <= '0';
-				ALUS    <= '1';
-				Bran    <= '0';
-				MemR    <= '1';
-				MemW    <= '0';
-				MtoReg  <= '1';
-				ALUCode <= "00";
-				J       <= '0';
-				-- HexCode => X"2A8"
+			WHEN "000000"		=>  -- R-Type
+				RegWrite	<= '1';
+				RegDst		<= '1';
+				AluSrc		<= '0';
+				Branch		<= '0';
+				MemRead		<= '0';
+				MemWrite	<= '0';
+				MemtoReg	<= '0';
+				ALUOp		<= "10";
+				Jump		<= '0';
+						-- HexCode => X"304"
 
-			WHEN "101011" =>  -- Sw
-				RegW    <= '0';
-				RegD    <= '-';
-				ALUS    <= '1';
-				Bran    <= '0';
-				MemR    <= '0';
-				MemW    <= '1';
-				MtoReg  <= '-';
-				ALUCode <= "00";
-				J       <= '0';
-				-- HexCode => X"090"
+			WHEN "100011"		=>  -- Lw
+				RegWrite	<= '1';
+				RegDst		<= '0';
+				AluSrc		<= '1';
+				Branch		<= '0';
+				MemRead		<= '1';
+				MemWrite	<= '0';
+				MemtoReg	<= '1';
+				ALUOp		<= "00";
+				Jump		<= '0';
+						-- HexCode => X"2A8"
 
-			WHEN "000100" =>  -- Beq
-				RegW    <= '0';
-				RegD    <= '-';
-				ALUS    <= '0';
-				Bran    <= '1';
-				MemR    <= '0';
-				MemW    <= '0';
-				MtoReg  <= '-';
-				ALUCode <= "01";
-				J       <= '0';
-				-- HexCode => X"042"
+			WHEN "101011"		=>  -- Sw
+				RegWrite	<= '0';
+				RegDst		<= '-';
+				AluSrc		<= '1';
+				Branch		<= '0';
+				MemRead		<= '0';
+				MemWrite	<= '1';
+				MemtoReg	<= '-';
+				ALUOp		<= "00";
+				Jump		<= '0';
+						-- HexCode => X"090"
 
-			WHEN "001000" =>  -- Addi
-				RegW    <= '1';
-				RegD    <= '0';
-				ALUS    <= '1';
-				Bran    <= '0';
-				MemR    <= '0';
-				MemW    <= '0';
-				MtoReg  <= '0';
-				ALUCode <= "00";
-				J       <= '0';
-				-- HexCode => X"280"
+			WHEN "000100"		=> -- Beq
+				RegWrite	<= '0';
+				RegDst		<= '-';
+				AluSrc		<= '0';
+				Branch		<= '1';
+				MemRead		<= '0';
+				MemWrite	<= '0';
+				MemtoReg	<= '-';
+				ALUOp		<= "01";
+				Jump		<= '0';
+						-- HexCode => X"042"
 
-			WHEN OTHERS =>  -- J
-				RegW    <= '0';
-				RegD    <= '-';
-				ALUS    <= '-';
-				Bran    <= '-';
-				MemR    <= '0';
-				MemW    <= '0';
-				MtoReg  <= '-';
-				ALUCode <= "00";
-				J       <= '0';
-				-- HexCode => X"001"
+			WHEN "001000"		=> -- Addi
+				RegWrite	<= '1';
+				RegDst		<= '0';
+				AluSrc		<= '1';
+				Branch		<= '0';
+				MemRead		<= '0';
+				MemWrite	<= '0';
+				MemtoReg	<= '0';
+				ALUOp		<= "00";
+				Jump		<= '0';
+						-- HexCode => X"280"
+
+			WHEN OTHERS		=> -- J
+				RegWrite	<= '0';
+				RegDst		<= '-';
+				AluSrc		<= '-';
+				Branch		<= '-';
+				MemRead		<= '0';
+				MemWrite	<= '0';
+				MemtoReg	<= '-';
+				ALUOp		<= "--";
+				Jump		<= '1';
+						-- HexCode => X"001"
+
 		END CASE;
+
 	END PROCESS;
 
-	ALUDecoder : PROCESS
+	ALUDecoder : PROCESS(ALUOp)
+
 	BEGIN
+		
+		CASE(Funct) IS
+		END CASE;
+
 		
 	END PROCESS;
 
