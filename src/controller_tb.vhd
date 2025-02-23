@@ -81,7 +81,14 @@ ARCHITECTURE valeurs_forcees OF CONTROLLER_tb IS
 			OP <= "100011";
 			WAIT FOR 10 ns;
 
-			ASSERT(RegWrite = '1' AND RegDst = '0' AND AluSrc = '1' AND Branch = '0' AND MemRead = '1' AND MemWrite = '0' AND Jump = '0')
+			ASSERT(RegWrite = '1' AND RegDst = '0' AND AluSrc = '1' AND Branch = '0' AND MemRead = '1' AND MemWrite = '0' AND Jump = '0' AND AluControl = "0010")
+				REPORT "Erreur LW Instruction" SEVERITY ERROR;
+
+			-- Sw Instruction
+			OP <= "101011";
+			WAIT FOR 10 ns;
+
+			ASSERT(RegWrite = '0' AND RegDst = '-' AND AluSrc = '1' AND Branch = '0' AND MemRead = '0' AND MemWrite = '1' AND Jump = '0' AND AluControl = "0010")
 				REPORT "Erreur LW Instruction" SEVERITY ERROR;
 
 			END PROCESS stimulus;
