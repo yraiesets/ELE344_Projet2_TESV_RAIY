@@ -8,16 +8,16 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY CONTROLLER IS
 
 	PORT (
-		OP, Funct    : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-		MemtoReg     : OUT STD_LOGIC;
-		MemWrite     : OUT STD_LOGIC;
-		MemRead      : OUT STD_LOGIC;
-		Branch       : OUT STD_LOGIC;
-		AluSrc       : OUT STD_LOGIC;
-		RegDst       : OUT STD_LOGIC;
-		RegWrite     : OUT STD_LOGIC;
-		Jump         : OUT STD_LOGIC;
-		AluControl   : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+		OP, Funct	:	IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		MemtoReg  	:	OUT STD_LOGIC;
+		MemWrite  	:	OUT STD_LOGIC;
+		MemRead   	:	OUT STD_LOGIC;
+		Branch    	:	OUT STD_LOGIC;
+		AluSrc    	:	OUT STD_LOGIC;
+		RegDst    	:	OUT STD_LOGIC;
+		RegWrite  	:	OUT STD_LOGIC;
+		Jump      	:	OUT STD_LOGIC;
+		AluControl	:	OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
 
 END CONTROLLER;
