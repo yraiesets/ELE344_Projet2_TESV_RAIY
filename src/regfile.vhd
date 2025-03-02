@@ -1,6 +1,6 @@
 --========================= regfile.vhd ===============================
 -- ELE-344 Conception et architecture de processeurs
--- École de technologie superieure, Aut 2018
+-- Ecole de technologie superieure, Aut 2018
 -- Auteur: Yves Blaquiere
 -- ====================================================================
 -- 1 cycle
@@ -26,9 +26,9 @@ ARCHITECTURE RegFile_arch OF RegFile IS
   TYPE RamType IS ARRAY (31 DOWNTO 0) OF std_logic_vector(31 DOWNTO 0) ;
   SIGNAL mem : RamType;
 BEGIN
---Fichier de registres à trois ports
+--Fichier de registres a trois ports
 --    Deux ports de lecture, combinatoire
---    Un port d'écriture synchrone
+--    Un port d'ecriture synchrone
   PROCESS (clk)
   BEGIN
     IF clk'event AND clk = '1' THEN

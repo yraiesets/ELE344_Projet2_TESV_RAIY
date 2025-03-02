@@ -1,7 +1,7 @@
 --========================= imem.vhd ============================
--- ELE-343 Conception des systèmes ordinés
--- HIVER 2017, Ecole de technologie supérieure
--- Auteur : Chakib Tadj, Vincent Trudel-Lapierre, Yves Blaquière
+-- ELE-343 Conception des systemes ordines
+-- HIVER 2017, Ecole de technologie superieure
+-- Auteur : Chakib Tadj, Vincent Trudel-Lapierre, Yves Blaquiere
 -- Update: Hachem Bensalem, Janvier 2025
 -- =============================================================
 -- Description: imem        
@@ -23,7 +23,7 @@ ARCHITECTURE imem_arch OF imem IS
   CONSTANT TAILLE_ROM : positive := 19;  -- taille de la rom (modifier au besoin)
   TYPE romtype IS ARRAY (0 TO TAILLE_ROM) OF std_logic_vector(31 DOWNTO 0);
 	
-	--Mettre à jour la Rom avec le code machine généré avec MARS et validé par le chargé de laboratoire
+	--Mettre a jour la Rom avec le code machine genere avec MARS et valide par le charge de laboratoire
   CONSTANT Rom : romtype := (
 	0  => x"20030001",
 	1  => x"2067000b",
