@@ -117,9 +117,9 @@ BEGIN
 		
 		CASE(ALUOp) IS
 
-			WHEN "00"	=>	AluControl	<=	"0100";
+			WHEN "00"	=>	AluControl	<=	"0010";
 			WHEN "01"	=>	AluControl	<=	"0110";
-			WHEN OTHERS	=>
+			WHEN "10"	=>
 						CASE(Funct) IS
 							WHEN "100000"	=>	AluControl	<=	"0010";
 							WHEN "100010"	=>	AluControl	<=	"0110";
@@ -127,6 +127,8 @@ BEGIN
 							WHEN "100101"	=>	AluControl	<=	"0001";
 							WHEN OTHERS	=>	AluControl	<=	"0111";
 						END CASE;
+
+			WHEN OTHERS	=>	AluControl	<=	"----";
 		END CASE;
 
 	END PROCESS;
