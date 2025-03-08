@@ -5,10 +5,10 @@
 -- ***** RAIY07099301 ************
 -- =============================================================
 -- Description: 
---              Architecture RTL du UAL (Unité Arithmétique et Logique)
---              de N bits (par défaut 32 bits).
---              Il prend deux entrées et applique une opération logique
---              ou arithmétique définie par `ualControl`.
+--              Architecture RTL du UAL (Unite Arithmetique et Logique)
+--              de N bits (par defaut 32 bits).
+--              Il prend deux entrees et applique une operation logique
+--              ou arithmetique definie par `ualControl`.
 -- =============================================================
 
 LIBRARY ieee;
@@ -16,13 +16,16 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
 ENTITY UAL IS
+
   GENERIC (N : INTEGER := 32);
+
   PORT (
 		ualControl : IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
         	srcA, srcB : IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);
         	result     : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
         	cout, zero : OUT STD_LOGIC
 	);
+	
 END UAL;
 
 ARCHITECTURE rtl OF UAL IS
@@ -33,16 +36,16 @@ ARCHITECTURE rtl OF UAL IS
   SIGNAL retenueSomme                 : UNSIGNED(N DOWNTO 0);
 
 BEGIN
-	-- Extraction des bits de contrôle depuis `ualControl`
+	-- Extraction des bits de contrele depuis `ualControl`
 	operation <= ualControl(1 DOWNTO 0);
   	op1       <= ualControl(3);
   	op2       <= ualControl(2);
 	
-	-- Sélection des entrées en fonction des bits de contrôle
+	-- Selection des entrees en fonction des bits de contrele
   	srcAMux   <= srcA WHEN op1 = '0' ELSE NOT(srcA);
   	srcBMux   <= srcB WHEN op2 = '0' ELSE NOT(srcB);
 	
-	-- Additionneur (utilisé pour ADD/SUB)
+	-- Additionneur (utilise pour ADD/SUB)
 	retenueSomme <= RESIZE(UNSIGNED(srcAMux), srcAMux'LENGTH+1) + UNSIGNED(srcBMux) + UNSIGNED'("" & op2);
 	somme <= STD_LOGIC_VECTOR(retenueSomme(N-1 DOWNTO 0));
 
