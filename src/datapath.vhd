@@ -22,14 +22,14 @@ ENTITY DATAPATH IS
         MemReadIn   :   IN  STD_LOGIC;
         MemWriteIn  :   IN  STD_LOGIC;
         AluControl  :   IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
-        Instruction :   IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-        ReadData    :   IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
+        Instruction :   IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+        ReadData    :   IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 
         MemReadOut  :   OUT STD_LOGIC;
         MemWriteOut :   OUT STD_LOGIC;
-        PC          :   OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-        AluResult   :   OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-        WriteData   :   OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+        PC          :   OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+        AluResult   :   OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+        WriteData   :   OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0)
     );
 
 END ENTITY DATAPATH;

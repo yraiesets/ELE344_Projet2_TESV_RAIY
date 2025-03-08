@@ -1,63 +1,69 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
-entity MIPS is 
-    port (
-	-- Signaux d'entrer 
-        Clk, Reset : in std_logic;
-        Instruction, ReadData : in std_logic_vector(31 downto 0);
-	-- Signaux de sortie
-        MemRead, MemWrite : out std_logic;
-        PC, AluResult, WriteData,  : out std_logic_vector(31 downto 0)
-    );
-end entity MIPS;
+ENTITY MIPS IS
 
-architecture logique of MIPS is 
+	PORT(
+		Instruction	:	IN	STD_LOGIC_VECTOR(31 DOWNTO 0);
+		ReadData	:	IN	STD_LOGIC_VECTOR(31 DOWNTO 0);
+		Reset		:	IN	STD_LOGIC;
+		Clock		:	IN	STD_LOGIC;
 
-    signal MemtoReg, MemWrite, MemRead, Branch, AluSrc, RegDst, RegWrite, Jump : std_logic;
-    signal AluControl : std_logic_vector(3 downto 0);
-begin
-    -- Instanciation du fichier controller.vhd
-    CONTROLLER : entity work.controller
-        port map (
-        OP	  	=> Instruction(31 downto 26), -- Partie du OPCODE
-	Funct	  	=> Instruction(5 downto 0), -- Partie de Fonction de l'instruction
-	MemtoReg  	=> MemtoReg -- Si 0 = Alu Si 1 = Mem (LW)
-	MemWrite  	=> MemWrite -- Si 1 Écrit dans la Mem (SW)	
-	MemRead   	=> MemRead -- Si 1 lit la Mem (LW)		
-	Branch    	=> Branch -- Si 1 = BEQ Si 0 	
-	AluSrc    	=> AluSrc -- Si 1 = type I SignImm Si 0 = rd2  	
-	RegDst    	=> RegDst -- Si 1 = rd [15:11] Si 0 = rt [20:16] 	
-	RegWrite  	=> RegWrite -- Si 1 Ecriture registre Si 0 soit BEQ, SW	
-	Jump      	=> Jump -- Si 1 = (PC = Jump addr)	
-	AluControl	=> AluControl -- Operation de ALU
-        );
+		MemRead		:	OUT	STD_LOGIC;
+		MemWrite	:	OUT	STD_LOGIC;
+		PC		:	OUT	STD_LOGIC_VECTOR(31 DOWNTO 0);
+		WriteData	:	OUT	STD_LOGIC_VECTOR(31 DOWNTO 0);
+		AluResult	:	OUT	STD_LOGIC_VECTOR(31 DOWNTO 0)
+	);
 
-    -- Instanciation du fichier datapath.vhd
-    Datapath : entity work.datapath
+END ENTITY MIPS;
 
-        port map (
-	clk 		=> Clk
-	reset		=> Reset
-	MemtoReg	=> MemtoReg
-	Branch 		=> Branch 
-	RegDst		=> RegDst
-	RegWrite	=> RegWrite
-	Jump		=> Jump
-	AluSrc		=> AluSrc
-	MemReadIn	=> MemReadIn
- 	MemWriteIn	=> MemWriteIn	
-	AluControl 	=> AluControl 	
-	Instruction	=> Instruction
-	ReadData 	=> ReadData
-	MemReadOut	=> MemReadOut
-	MemWriteOut	=> MemWriteOut	
-        PC		=> PC
- 	AluResult	=> AluResult	
-	WriteData  	=> WriteData   
-        );
+ARCHITECTURE rtl OF MIPS IS
+	-- Signaux internes entre le controleur et le datapath
+	SIGNAL MemtoReg, Branch, Jump			:	STD_LOGIC;
+	SIGNAL AluSrc, RegDst, RegWrite			:	STD_LOGIC;
+	SIGNAL MemReadIn, MemWriteIn			:	STD_LOGIC;
+	SIGNAL AluControl				:	STD_LOGIC_VECTOR(3 DOWNTO 0);
 
--- Je ne crois pas qu'on ait besoin d'assigner rien en sortie 
+	BEGIN
 
-end architecture logique;
+		CONTROLLER_INST		:	ENTITY work.CONTROLLER(rtl)
+			PORT MAP(
+
+				Instruction(31 DOWNTO 26),	-- OP
+				Instruction(5 DOWNTO 0),	-- Funct
+				MemtoReg,
+				MemWrite,
+				MemRead,
+				Branch,
+				AluSrc,
+				RegDst,
+				RegWrite,
+				Jump,
+				AluControl			
+			);
+
+		DATAPATH_INST		:	ENTITY work.DATAPATH(rtl)
+			PORT MAP(
+				Clock,
+				Reset,
+				MemtoReg,
+				Branch,
+				AluSrc,
+				RegDst,
+				RegWrite,
+				Jump,
+				MemReadIn,
+				MemWriteIn,
+				AluControl,
+				Instruction,
+				ReadData,
+				MemReadOut,
+				MemWriteOut,
+				PC,
+				WriteData,
+				AluResult
+			);
+
+END ARCHITECTURE rtl;
