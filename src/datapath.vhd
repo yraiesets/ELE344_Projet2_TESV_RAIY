@@ -84,16 +84,16 @@ BEGIN
 			rd1,
 			SrcB,
 			AluResultIntern,
-			Cout,
+			OPEN,
 			Zero
 		);
 
-	-- Déterminer si on doit effectuer un branchement
+	-- Dï¿½terminer si on doit effectuer un branchement
 	PCSrc		<=	Branch AND Zero;
 	
 	-- Calcul des signaux utilises dans la logique du PC :
 	PCPlus4 	<=	STD_LOGIC_VECTOR(UNSIGNED(PCIntern) + TO_UNSIGNED(4, N));
-	PCJump		<=	PCPlus4(31 DOWNTO 28) & Instruction(25 DOWNTO 0) & "00"; -- Concaténation pour obtenir l'adresse de saut complète
+	PCJump		<=	PCPlus4(31 DOWNTO 28) & Instruction(25 DOWNTO 0) & "00"; -- Concatï¿½nation pour obtenir l'adresse de saut complï¿½te
 	SignImmSh	<=	STD_LOGIC_VECTOR(SHIFT_LEFT(SIGNED(SignImm), 2));
 	PCBranch	<=	STD_LOGIC_VECTOR(SIGNED(PCPlus4) + SIGNED(SignImmSh));
 

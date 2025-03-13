@@ -24,7 +24,7 @@ ARCHITECTURE rtl OF TOP IS
 
 	SIGNAL PCIntern, WriteDataIntern, AluResultIntern	:	STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL Instruction, ReadData				:	STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SIGNAL MemRead, MemWrite				:	STD_LOGIC;
+	SIGNAL MemWrite				:	STD_LOGIC;
 	
 	BEGIN
 
@@ -40,7 +40,7 @@ ARCHITECTURE rtl OF TOP IS
 				ReadData,
 				Reset,
 				Clk,
-				MemRead,
+				OPEN,
 				MemWrite,
 				PCIntern,
 				WriteDataIntern,
