@@ -11,6 +11,7 @@ ENTITY DATAPATH IS
     GENERIC(N   :   INTEGER :=  32);
 
     PORT(
+
         Clk         :   IN  STD_LOGIC;
         Reset       :   IN  STD_LOGIC;
         MemtoReg    :   IN  STD_LOGIC;
@@ -30,6 +31,7 @@ ENTITY DATAPATH IS
         PC          :   OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
         AluResult   :   OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
         WriteData   :   OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0)
+
     );
 
 END ENTITY DATAPATH;
@@ -42,7 +44,7 @@ ARCHITECTURE rtl OF DATAPATH IS
 
 	-- Signaux internes pour l'ALU
 	SIGNAL SrcB, AluResultIntern						:	STD_LOGIC_VECTOR(N-1 DOWNTO 0);
-	SIGNAL Zero, Cout							:	STD_LOGIC;
+	SIGNAL Zero								:	STD_LOGIC;
 
 	-- Signaux internes pour le PC
 	SIGNAL PCIntern, PCNext, PCPlus4					:	STD_LOGIC_VECTOR(N-1 DOWNTO 0);
@@ -64,11 +66,11 @@ BEGIN
     	-- Banc de registres
     	REGISTER_FILE	:	ENTITY work.RegFile(RegFile_arch)
         	PORT MAP(
-            		Clk,
-            		RegWrite,
-            		Instruction(25 DOWNTO 21),
-            		Instruction(20 DOWNTO 16),
-            		WriteReg,
+            		clk	=> Clk,
+            		we	=> RegWrite,
+            		ra1	=> Instruction(25 DOWNTO 21),
+            		ra2	=> Instruction(20 DOWNTO 16),
+            		wd	=> WriteReg,
             		Result,
             		rd1,
             		rd2

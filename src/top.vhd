@@ -1,64 +1,66 @@
---	Controller.VHD
---	Yasser Raies et Vincent Tessier
---	Hiver 2025
+-- Controller.VHD
+-- Yasser Raies et Vincent Tessier
+-- Hiver 2025
 
 LIBRARY IEEE;
 USE IEEE.NUMERIC_STD.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-
 ENTITY TOP IS
 
-	PORT(
-		Clk		:	IN	STD_LOGIC;
-		Reset		:	IN	STD_LOGIC;
-		
-		PC		:	OUT	STD_LOGIC_VECTOR(31 DOWNTO 0);
-		WriteData	:	OUT	STD_LOGIC_VECTOR(31 DOWNTO 0);
-		AluResult	:	OUT	STD_LOGIC_VECTOR(31 DOWNTO 0)
-	);
+    PORT (
+        Clk       : IN  STD_LOGIC;
+        Reset     : IN  STD_LOGIC;
+
+        PC        : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        WriteData : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        AluResult : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    );
 
 END ENTITY TOP;
 
 ARCHITECTURE rtl OF TOP IS
 
-	SIGNAL PCIntern, WriteDataIntern, AluResultIntern	:	STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SIGNAL Instruction, ReadData				:	STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SIGNAL MemWrite				:	STD_LOGIC;
-	
-	BEGIN
+    SIGNAL PCIntern, WriteDataIntern, AluResultIntern : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL Instruction, ReadData                      : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL MemRead, MemWrite                          : STD_LOGIC;
 
-		IMEM_INST	:	ENTITY work.IMEM(imem_arch)
-			PORT MAP(
-				PCIntern(9 DOWNTO 2),
-				Instruction
-			);
+BEGIN
 
-		MIPS_INST	:	ENTITY work.MIPS(rtl)
-			PORT MAP(
-				Instruction,
-				ReadData,
-				Reset,
-				Clk,
-				OPEN,
-				MemWrite,
-				PCIntern,
-				WriteDataIntern,
-				AluResultIntern
-			);
+    -- Instanciation de la mémoire d'instructions
+    IMEM_INST : ENTITY work.IMEM(imem_arch)
+        PORT MAP (
+            PCIntern(7 DOWNTO 0),
+            Instruction
+        );
 
-		DMEM_INST	:	ENTITY work.DMEM(dmem_arch)
-			PORT MAP(
-				Clk,
-				MemWrite,
-				AluResultIntern,
-				WriteDataIntern,
-				ReadData
-			);
+    -- Instanciation du processeur MIPS
+    MIPS_INST : ENTITY work.MIPS(rtl)
+        PORT MAP (
+            Instruction,
+            ReadData,
+            Reset,
+            Clk,
+            MemRead,
+            MemWrite,
+            PCIntern,
+            WriteDataIntern,
+            AluResultIntern
+        );
 
-	-- Assignation des sorties
-	PC <= PCIntern;
-	WriteData <= WriteDataIntern;
-	AluResult <= AluResultIntern;
+    -- Instanciation de la mémoire de données
+    DMEM_INST : ENTITY work.DMEM(dmem_arch)
+        PORT MAP (
+            Clk,
+            MemWrite,
+            AluResultIntern,
+            WriteDataIntern,
+            ReadData
+        );
+
+    -- Assignation des sorties
+    PC        <= PCIntern;
+    WriteData <= WriteDataIntern;
+    AluResult <= AluResultIntern;
 
 END ARCHITECTURE rtl;
