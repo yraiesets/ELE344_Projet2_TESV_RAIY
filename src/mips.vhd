@@ -24,18 +24,19 @@ ARCHITECTURE rtl OF MIPS IS
 	SIGNAL MemtoReg, Branch, Jump			:	STD_LOGIC;
 	SIGNAL AluSrc, RegDst, RegWrite			:	STD_LOGIC;
 	SIGNAL MemReadIn, MemWriteIn			:	STD_LOGIC;
+	SIGNAL MemReadOut, MemWriteOut			:	STD_LOGIC;
 	SIGNAL AluControl				:	STD_LOGIC_VECTOR(3 DOWNTO 0);
 
 	BEGIN
 
+		-- Instanciation du controleur
 		CONTROLLER_INST		:	ENTITY work.CONTROLLER(rtl)
 			PORT MAP(
-
 				Instruction(31 DOWNTO 26),	-- OP
 				Instruction(5 DOWNTO 0),	-- Funct
 				MemtoReg,
-				MemWrite,
-				MemRead,
+				MemWriteIn,  -- Correction ici !
+				MemReadIn,   -- Correction ici !
 				Branch,
 				AluSrc,
 				RegDst,
@@ -44,6 +45,7 @@ ARCHITECTURE rtl OF MIPS IS
 				AluControl			
 			);
 
+		-- Instanciation du datapath
 		DATAPATH_INST		:	ENTITY work.DATAPATH(rtl)
 			PORT MAP(
 				Clock,
@@ -54,8 +56,8 @@ ARCHITECTURE rtl OF MIPS IS
 				RegDst,
 				RegWrite,
 				Jump,
-				MemReadIn,
-				MemWriteIn,
+				MemReadIn,  
+				MemWriteIn,  
 				AluControl,
 				Instruction,
 				ReadData,
@@ -65,5 +67,9 @@ ARCHITECTURE rtl OF MIPS IS
 				WriteData,
 				AluResult
 			);
+
+		-- Assigner les signaux de sortie
+		MemRead  <= MemReadOut;
+		MemWrite <= MemWriteOut;
 
 END ARCHITECTURE rtl;

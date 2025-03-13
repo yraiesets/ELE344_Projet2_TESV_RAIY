@@ -96,7 +96,7 @@ BEGIN
 				Jump		<= '0';
 						-- HexCode => X"280"
 
-			WHEN OTHERS		=> -- J
+			WHEN "000010"		=> -- J
 				RegWrite	<= '0';
 				RegDst		<= '-';
 				AluSrc		<= '-';
@@ -106,6 +106,18 @@ BEGIN
 				MemtoReg	<= '-';
 				ALUOp		<= "--";
 				Jump		<= '1';
+						-- HexCode => X"001"
+
+			WHEN OTHERS		=>
+				RegWrite	<= '-';
+				RegDst		<= '-';
+				AluSrc		<= '-';
+				Branch		<= '-';
+				MemRead		<= '-';
+				MemWrite	<= '-';
+				MemtoReg	<= '-';
+				ALUOp		<= "--";
+				Jump		<= '-';
 						-- HexCode => X"001"
 
 		END CASE;
@@ -126,7 +138,8 @@ BEGIN
 							WHEN "100010"	=>	AluControl	<=	"0110";
 							WHEN "100100"	=>	AluControl	<=	"0000";
 							WHEN "100101"	=>	AluControl	<=	"0001";
-							WHEN OTHERS	=>	AluControl	<=	"0111";
+							WHEN "101010"	=>	AluControl	<=	"0111";
+							WHEN OTHERS	=>	AluControl	<=	"----";
 						END CASE;
 
 			WHEN OTHERS	=>	AluControl	<=	"----";

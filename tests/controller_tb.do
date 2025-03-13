@@ -15,6 +15,7 @@ view wave
 
 # 5) Montrer tous les signaux dans la fenetre wave
 add wave -r *
+wave zoom full
 
 # 6) Execution de la simulation pour 500 nanosecondes
 run 400ns

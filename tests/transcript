@@ -1,0 +1,82 @@
+# do {.\datapath_tb.do}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:31:46 on Mar 09,2025
+# vcom -reportprogress 300 -93 -work work ../src/ual.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UAL
+# -- Compiling architecture rtl of UAL
+# ** Warning: ../src/ual.vhd(60): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+# End time: 13:31:46 on Mar 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:31:46 on Mar 09,2025
+# vcom -reportprogress 300 -93 -work work ../src/regfile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegFile
+# -- Compiling architecture RegFile_arch of RegFile
+# End time: 13:31:47 on Mar 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:31:47 on Mar 09,2025
+# vcom -reportprogress 300 -93 -work work ../src/datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity DATAPATH
+# -- Compiling architecture rtl of DATAPATH
+# -- Loading entity RegFile
+# -- Loading entity UAL
+# End time: 13:31:47 on Mar 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:31:47 on Mar 09,2025
+# vcom -reportprogress 300 -93 -work work ../src/datapath_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity datapath_tb
+# -- Compiling architecture tb of datapath_tb
+# -- Loading entity DATAPATH
+# End time: 13:31:47 on Mar 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim datapath_tb 
+# Start time: 13:31:47 on Mar 09,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.datapath_tb(tb)
+# Loading work.datapath(rtl)
+# Loading work.regfile(regfile_arch)
+# Loading work.ual(rtl)
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/UUT/UAL
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /datapath_tb/UUT/UAL
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 2  Instance: /datapath_tb/UUT/UAL
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 20 ns  Iteration: 6  Instance: /datapath_tb/UUT/UAL
+# ** Error: Erreur: ADD a donné une mauvaise valeur.
+#    Time: 40 ns  Iteration: 0  Instance: /datapath_tb
+# ** Error: Erreur: LW n'a pas chargé la valeur correcte.
+#    Time: 80 ns  Iteration: 0  Instance: /datapath_tb
+# ** Error: Erreur: BEQ n'a pas modifié le PC correctement.
+#    Time: 120 ns  Iteration: 0  Instance: /datapath_tb
+# ** Error: Erreur: JUMP n'a pas modifié le PC correctement.
+#    Time: 140 ns  Iteration: 0  Instance: /datapath_tb
+# ** Note: Test terminé avec succès.
+#    Time: 140 ns  Iteration: 0  Instance: /datapath_tb
+# End time: 13:36:45 on Mar 09,2025, Elapsed time: 0:04:58
+# Errors: 4, Warnings: 4

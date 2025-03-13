@@ -53,25 +53,13 @@ ARCHITECTURE rtl OF DATAPATH IS
 
 BEGIN
     	-- Mul2-to-1 pour determine l'addresse d'ecriture
-    	PROCESS(RegDst, Instruction) IS
-    		BEGIN
-        		CASE RegDst IS
-            			WHEN '0'    =>      WriteReg    <=  Instruction(20 DOWNTO 16);
-            			WHEN OTHERS =>      WriteReg    <=  Instruction(15 DOWNTO 11);
-        		END CASE;
-    	END PROCESS;
+	WriteReg <= Instruction(20 DOWNTO 16) WHEN RegDst = '0' ELSE Instruction(15 DOWNTO 11);
 
    	 -- Mul2-to-1 pour determine les donnees d'ecriture
-    	PROCESS(MemtoReg, ReadData, AluResultIntern) IS
-    		BEGIN
-        		CASE MemtoReg IS
-            			WHEN '1'	=>      Result		<=     ReadData;
-            			WHEN OTHERS 	=>      Result          <=     AluResultIntern;
-        		END CASE;
-    	END PROCESS;
+	Result <= ReadData WHEN MemtoReg = '1' ELSE AluResultIntern;
 
     	-- Extension de signe (SignExtend)
-	SignImm <= STD_LOGIC_VECTOR(RESIZE(SIGNED(Instruction(15 DOWNTO 0)), 32));
+	SignImm <= STD_LOGIC_VECTOR(RESIZE(SIGNED(Instruction(15 DOWNTO 0)), N));
 
     	-- Banc de registres
     	REGISTER_FILE	:	ENTITY work.RegFile(RegFile_arch)
@@ -87,13 +75,7 @@ BEGIN
         	);
 
 	-- Mul2-to-1 pour determine la SrcB de l'ALU
-	PROCESS(AluSrc, SignImm, rd2) IS
-		BEGIN
-			CASE AluSrc IS
-				WHEN '1'	=>	SrcB		<=	SignImm;
-				WHEN OTHERS	=>	SrcB		<=	rd2;
-			END CASE;
-	END PROCESS;
+	SrcB <= SignImm WHEN AluSrc = '1' ELSE rd2;
 	
 	-- UAL
 	UAL		:	ENTITY work.UAL(rtl)
@@ -106,32 +88,21 @@ BEGIN
 			Zero
 		);
 
-	-- Determine le PCSrc
+	-- Déterminer si on doit effectuer un branchement
 	PCSrc		<=	Branch AND Zero;
 	
-	-- Calcul des signaux utilises dans la logique du PC
-	PCPlus4 	<=	STD_LOGIC_VECTOR(UNSIGNED(PCIntern) + TO_UNSIGNED(4, 32));
-	PCJump		<=	PCPlus4(31 DOWNTO 28) & Instruction(25 DOWNTO 0) & "00";
+	-- Calcul des signaux utilises dans la logique du PC :
+	PCPlus4 	<=	STD_LOGIC_VECTOR(UNSIGNED(PCIntern) + TO_UNSIGNED(4, N));
+	PCJump		<=	PCPlus4(31 DOWNTO 28) & Instruction(25 DOWNTO 0) & "00"; -- Concaténation pour obtenir l'adresse de saut complète
 	SignImmSh	<=	STD_LOGIC_VECTOR(SHIFT_LEFT(SIGNED(SignImm), 2));
 	PCBranch	<=	STD_LOGIC_VECTOR(SIGNED(PCPlus4) + SIGNED(SignImmSh));
 
 	-- Mul2-to-1 pour determiner PCNextBr
-	PROCESS(PCSrc, PCBranch, PCPlus4) IS
-		BEGIN
-			CASE PCSrc IS
-				WHEN '1'	=>	PCNextBr	<=	PCBranch;
-				WHEN OTHERS	=>	PCNextBr	<=	PCPlus4;
-			END CASE;
-	END PROCESS;
+	PCNextBr <= PCBranch WHEN PCSrc = '1' ELSE PCPlus4;
+
 
 	-- Mul2-to-1 pour determiner PCNext
-	PROCESS(Jump, PCJump, PCNextBr) IS
-		BEGIN
-			CASE Jump IS
-				WHEN '1'	=>	PCNext		<=	PCJump;
-				WHEN OTHERS	=>	PCNext		<=	PCNextBr;
-			END CASE;
-	END PROCESS;
+	PCNext <= PCJump WHEN Jump = '1' ELSE PCNextBr;
 
 	-- Bascule D Synchrone avec remise a zero asynchrone (clear).
 	PROCESS(Clk, Reset) IS
