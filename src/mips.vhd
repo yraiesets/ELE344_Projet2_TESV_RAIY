@@ -35,8 +35,8 @@ ARCHITECTURE rtl OF MIPS IS
 				Instruction(31 DOWNTO 26),	-- OP
 				Instruction(5 DOWNTO 0),	-- Funct
 				MemtoReg,
-				MemWriteIn,  -- Correction ici !
-				MemReadIn,   -- Correction ici !
+				MemWriteIn,
+				MemReadIn,
 				Branch,
 				AluSrc,
 				RegDst,
@@ -61,15 +61,11 @@ ARCHITECTURE rtl OF MIPS IS
 				AluControl,
 				Instruction,
 				ReadData,
-				MemReadOut,
-				MemWriteOut,
+				MemRead,
+				MemWrite,
 				PC,
-				WriteData,
-				AluResult
+				AluResult,
+				WriteData	
 			);
-
-		-- Assigner les signaux de sortie
-		MemRead  <= MemReadOut;
-		MemWrite <= MemWriteOut;
 
 END ARCHITECTURE rtl;

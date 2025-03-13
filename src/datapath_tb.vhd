@@ -34,7 +34,7 @@ ARCHITECTURE tb OF datapath_tb IS
 BEGIN
 
     -- Instanciation du Datapath
-    UUT: ENTITY work.datapath
+    DUT: ENTITY work.datapath
         PORT MAP(
             Clk         => Clk,
             Reset       => Reset,

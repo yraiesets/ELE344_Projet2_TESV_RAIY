@@ -30,7 +30,7 @@ ARCHITECTURE rtl OF TOP IS
 
 		IMEM_INST	:	ENTITY work.IMEM(imem_arch)
 			PORT MAP(
-				PCIntern(7 DOWNTO 0),
+				PCIntern(9 DOWNTO 2),
 				Instruction
 			);
 
