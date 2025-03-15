@@ -1,12 +1,12 @@
 --========================= top_fpga.vhd ============================
--- ELE-343 Conception des systèmes ordinés
--- HIVER 2017, Ecole de technologie supérieure
--- Auteur : Yves Blaquière
+-- ELE-343 Conception des systï¿½mes ordinï¿½s
+-- HIVER 2017, Ecole de technologie supï¿½rieure
+-- Auteur : Yves Blaquiï¿½re
 -- =============================================================
 -- Description: top_fpga
 --              Enveloppe (wrapper) pour le top du MIPS qui
 --              Nomme les ports en fonction du fichier des pins
---              du FPGA, tel que décrit dans le fichier
+--              du FPGA, tel que dï¿½crit dans le fichier
 --              DE2_pin_assignments.csv du DE2
 --              Ajoute des afficheurs 7-segment sur les ports de
 --              sortie du top
@@ -33,10 +33,10 @@ BEGIN  -- ARCHITECTURE tb
   -- Instantiation du top
   DUT : ENTITY work.top
     PORT MAP (Reset       => KEY(0),
-              clock       => KEY(1),
-              PC          => PC,
+              Clk       => KEY(1),
+              PC(9 downto 2) => PC,
               WriteData   => WriteData,
-              DataAddress => DataAddress);
+              AluResult => DataAddress);
 
   -- Afficheurs 7-segments pour les ports de sortie
   dec7seg_0 : ENTITY work.dec7seg PORT MAP (HEX0, PC(3 DOWNTO 0));
