@@ -66,14 +66,14 @@ BEGIN
     	-- Banc de registres
     	REGISTER_FILE	:	ENTITY work.RegFile(RegFile_arch)
         	PORT MAP(
-            		clk	=> Clk,
-            		we	=> RegWrite,
-            		ra1	=> Instruction(25 DOWNTO 21),
-            		ra2	=> Instruction(20 DOWNTO 16),
-            		wd	=> WriteReg,
-            		Result,
-            		rd1,
-            		rd2
+            		clk	=>	Clk,
+            		we	=>	RegWrite,
+            		ra1	=>	Instruction(25 DOWNTO 21),
+            		ra2	=>	Instruction(20 DOWNTO 16),
+            		wa	=>	WriteReg,
+            		wd	=>	Result,
+            		rd1	=>	rd1,
+            		rd2	=>	rd2
         	);
 
 	-- Mul2-to-1 pour determine la SrcB de l'ALU
@@ -82,12 +82,12 @@ BEGIN
 	-- UAL
 	UAL		:	ENTITY work.UAL(rtl)
 		PORT MAP(
-			AluControl,
-			rd1,
-			SrcB,
-			AluResultIntern,
-			OPEN,
-			Zero
+			ualControl	=>	AluControl,
+			srcA		=>	rd1,
+			srcB		=>	SrcB,
+			result		=>	AluResultIntern,
+			cout		=>	OPEN,
+			zero		=>	Zero
 		);
 
 	-- D�terminer si on doit effectuer un branchement

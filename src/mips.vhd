@@ -19,57 +19,53 @@ END ENTITY MIPS;
 
 ARCHITECTURE rtl OF MIPS IS
 
-    -- Signaux internes entre le controleur et le datapath
-    SIGNAL MemtoReg, Branch, Jump       : STD_LOGIC;
-    SIGNAL AluSrc, RegDst, RegWrite     : STD_LOGIC;
-    SIGNAL MemReadIn, MemWriteIn        : STD_LOGIC;
-    SIGNAL MemReadOut, MemWriteOut      : STD_LOGIC;
-    SIGNAL AluControl                   : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	-- Signaux internes entre le controleur et le datapath
+	SIGNAL MemtoRegI, MemWriteI, MemReadI	:	STD_LOGIC;
+	SIGNAL BranchI, AluSrcI, RegDstI	:	STD_LOGIC;
+	SIGNAL RegWriteI, JumpI			:	STD_LOGIC;
+	SIGNAL AluControlI			:	STD_LOGIC_VECTOR(3 DOWNTO 0);
+
 
 BEGIN
 
-    -- Instanciation du controleur
-    CONTROLLER_INST : ENTITY work.CONTROLLER(rtl)
-        PORT MAP (
-            Instruction(31 DOWNTO 26), -- OP
-            Instruction(5 DOWNTO 0),  -- Funct
-            MemtoReg,
-            MemWriteIn,
-            MemReadIn,
-            Branch,
-            AluSrc,
-            RegDst,
-            RegWrite,
-            Jump,
-            AluControl
-        );
+	-- Instanciation du controleur
+	CONTROLLER_INST : ENTITY work.CONTROLLER(rtl)
+		PORT MAP (
+			OP		=>	Instruction(31 DOWNTO 26),
+			Funct		=>	Instruction(5 DOWNTO 0),
+			MemtoReg	=>	MemtoRegI,
+			MemWrite	=>	MemWriteI,
+			MemRead		=>	MemReadI,
+			Branch		=>	BranchI,
+			AluSrc		=>	AluSrcI,
+			RegDst		=>	RegDstI,
+			RegWrite	=>	RegWriteI,
+			Jump		=>	JumpI,
+			AluControl	=>	AluControlI
+		);
 
-    -- Instanciation du datapath
-    DATAPATH_INST : ENTITY work.DATAPATH(rtl)
-        PORT MAP (
-            Clock,
-            Reset,
-            MemtoReg,
-            Branch,
-            AluSrc,
-            RegDst,
-            RegWrite,
-            Jump,
-            MemReadIn,
-            MemWriteIn,
-            AluControl,
-            Instruction,
-            ReadData,
-            MemReadOut,
-            MemWriteOut,
-            PC,
-            WriteData,
-            AluResult
-        );
-
-    -- Assigner les signaux de sortie
-    MemRead  <= MemReadOut;
-    MemWrite <= MemWriteOut;
+	-- Instanciation du datapath
+	DATAPATH_INST : ENTITY work.DATAPATH(rtl)
+		PORT MAP (
+			Clk		=>	Clock,
+			Reset		=>	Reset,
+			MemtoReg	=>	MemtoRegI,
+			Branch		=>	BranchI,
+			AluSrc		=>	AluSrcI,
+			RegDst		=>	RegDstI,
+			RegWrite	=>	RegWriteI,
+			Jump		=>	JumpI,
+			MemReadIn	=>	MemReadI,
+			MemWriteIn	=>	MemWriteI,
+			AluControl	=>	AluControlI,
+			Instruction	=>	Instruction,
+			ReadData	=>	ReadData,
+			MemReadOut	=>	MemRead,
+			MemWriteOut	=>	MemWrite,
+			PC		=>	PC,
+			WriteData	=>	WriteData,
+ 			AluResult	=>	AluResult
+		);
 
 END ARCHITECTURE rtl;
 
