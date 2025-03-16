@@ -109,7 +109,7 @@ BEGIN
 	-- Bascule D Synchrone avec remise a zero asynchrone (clear).
 	PROCESS(Clk, Reset) IS
 		BEGIN
-			IF Reset = '0' THEN
+			IF Reset = '1' THEN
 				PCIntern <= (OTHERS => '0');
 			ELSIF RISING_EDGE(Clk) THEN
 				PCIntern <= PCNext;

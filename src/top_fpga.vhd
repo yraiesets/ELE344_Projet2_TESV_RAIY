@@ -38,7 +38,7 @@ BEGIN
 	DUT : ENTITY work.TOP(rtl)
 		PORT MAP(
 			Clk		=> KEY(1),
-			Reset		=> KEY(0),
+			Reset		=> NOT(KEY(0)),
 			PC		=> PC,
 			WriteData	=> WriteData,
 			DataAddress	=> DataAddress
