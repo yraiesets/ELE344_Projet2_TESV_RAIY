@@ -1,15 +1,28 @@
+<<<<<<< HEAD
 Fitter Status : Successful - Sun Mar 16 13:47:41 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+=======
+Fitter Status : Successful - Sat Mar 15 15:01:09 2025
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+>>>>>>> main
 Revision Name : top
-Top-level Entity Name : TOP
+Top-level Entity Name : top_fpga
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
+<<<<<<< HEAD
 Total logic elements : 5,518 / 49,760 ( 11 % )
     Total combinational functions : 3,461 / 49,760 ( 7 % )
     Dedicated logic registers : 4,286 / 49,760 ( 9 % )
 Total registers : 4286
 Total pins : 98 / 360 ( 27 % )
+=======
+Total logic elements : 5,530 / 49,760 ( 11 % )
+    Total combinational functions : 3,438 / 49,760 ( 7 % )
+    Dedicated logic registers : 4,264 / 49,760 ( 9 % )
+Total registers : 4264
+Total pins : 44 / 360 ( 12 % )
+>>>>>>> main
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )

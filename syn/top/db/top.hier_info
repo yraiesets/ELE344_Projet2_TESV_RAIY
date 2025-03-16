@@ -1,4 +1,51 @@
-|top
+|top_fpga
+KEY[1] => top:DUT.Clk
+KEY[0] => top:DUT.Reset
+HEX0[6] << dec7seg:dec7seg_0.sortie[6]
+HEX0[5] << dec7seg:dec7seg_0.sortie[5]
+HEX0[4] << dec7seg:dec7seg_0.sortie[4]
+HEX0[3] << dec7seg:dec7seg_0.sortie[3]
+HEX0[2] << dec7seg:dec7seg_0.sortie[2]
+HEX0[1] << dec7seg:dec7seg_0.sortie[1]
+HEX0[0] << dec7seg:dec7seg_0.sortie[0]
+HEX1[6] << dec7seg:dec7seg_1.sortie[6]
+HEX1[5] << dec7seg:dec7seg_1.sortie[5]
+HEX1[4] << dec7seg:dec7seg_1.sortie[4]
+HEX1[3] << dec7seg:dec7seg_1.sortie[3]
+HEX1[2] << dec7seg:dec7seg_1.sortie[2]
+HEX1[1] << dec7seg:dec7seg_1.sortie[1]
+HEX1[0] << dec7seg:dec7seg_1.sortie[0]
+HEX2[6] << dec7seg:dec7seg_2.sortie[6]
+HEX2[5] << dec7seg:dec7seg_2.sortie[5]
+HEX2[4] << dec7seg:dec7seg_2.sortie[4]
+HEX2[3] << dec7seg:dec7seg_2.sortie[3]
+HEX2[2] << dec7seg:dec7seg_2.sortie[2]
+HEX2[1] << dec7seg:dec7seg_2.sortie[1]
+HEX2[0] << dec7seg:dec7seg_2.sortie[0]
+HEX3[6] << dec7seg:dec7seg_3.sortie[6]
+HEX3[5] << dec7seg:dec7seg_3.sortie[5]
+HEX3[4] << dec7seg:dec7seg_3.sortie[4]
+HEX3[3] << dec7seg:dec7seg_3.sortie[3]
+HEX3[2] << dec7seg:dec7seg_3.sortie[2]
+HEX3[1] << dec7seg:dec7seg_3.sortie[1]
+HEX3[0] << dec7seg:dec7seg_3.sortie[0]
+HEX4[6] << dec7seg:dec7seg_4.sortie[6]
+HEX4[5] << dec7seg:dec7seg_4.sortie[5]
+HEX4[4] << dec7seg:dec7seg_4.sortie[4]
+HEX4[3] << dec7seg:dec7seg_4.sortie[3]
+HEX4[2] << dec7seg:dec7seg_4.sortie[2]
+HEX4[1] << dec7seg:dec7seg_4.sortie[1]
+HEX4[0] << dec7seg:dec7seg_4.sortie[0]
+HEX5[6] << dec7seg:dec7seg_5.sortie[6]
+HEX5[5] << dec7seg:dec7seg_5.sortie[5]
+HEX5[4] << dec7seg:dec7seg_5.sortie[4]
+HEX5[3] << dec7seg:dec7seg_5.sortie[3]
+HEX5[2] << dec7seg:dec7seg_5.sortie[2]
+HEX5[1] << dec7seg:dec7seg_5.sortie[1]
+HEX5[0] << dec7seg:dec7seg_5.sortie[0]
+
+
+|top_fpga|TOP:DUT
 Clk => mips:MIPS_INST.Clock
 Clk => dmem:DMEM_INST.clk
 Reset => mips:MIPS_INST.Reset
@@ -100,7 +147,7 @@ DataAddress[30] << mips:MIPS_INST.AluResult[30]
 DataAddress[31] << mips:MIPS_INST.AluResult[31]
 
 
-|top|imem:IMEM_INST
+|top_fpga|TOP:DUT|imem:IMEM_INST
 adresse[0] => Mux0.IN36
 adresse[0] => Mux1.IN36
 adresse[0] => Mux2.IN36
@@ -272,7 +319,7 @@ data[30] <= <GND>
 data[31] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|MIPS:MIPS_INST
+|top_fpga|TOP:DUT|MIPS:MIPS_INST
 Instruction[0] => controller:CONTROLLER_INST.Funct[0]
 Instruction[0] => datapath:DATAPATH_INST.Instruction[0]
 Instruction[1] => controller:CONTROLLER_INST.Funct[1]
@@ -451,7 +498,7 @@ AluResult[30] <= datapath:DATAPATH_INST.AluResult[30]
 AluResult[31] <= datapath:DATAPATH_INST.AluResult[31]
 
 
-|top|MIPS:MIPS_INST|CONTROLLER:CONTROLLER_INST
+|top_fpga|TOP:DUT|MIPS:MIPS_INST|CONTROLLER:CONTROLLER_INST
 OP[0] => ~NO_FANOUT~
 OP[1] => Mux0.IN19
 OP[1] => Mux6.IN5
@@ -494,7 +541,7 @@ AluControl[2] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
 AluControl[3] <= <GND>
 
 
-|top|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST
+|top_fpga|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST
 Clk => regfile:REGISTER_FILE.clk
 Clk => PCIntern[0].CLK
 Clk => PCIntern[1].CLK
@@ -915,7 +962,7 @@ WriteData[30] <= regfile:REGISTER_FILE.rd2[30]
 WriteData[31] <= regfile:REGISTER_FILE.rd2[31]
 
 
-|top|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE
+|top_fpga|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE
 clk => mem~37.CLK
 clk => mem~0.CLK
 clk => mem~1.CLK
@@ -1117,7 +1164,7 @@ rd2[30] <= rd2.DB_MAX_OUTPUT_PORT_TYPE
 rd2[31] <= rd2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|UAL:UAL
+|top_fpga|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|UAL:UAL
 ualControl[0] => Mux0.IN4
 ualControl[0] => Mux1.IN4
 ualControl[0] => Mux2.IN4
@@ -1411,7 +1458,7 @@ cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 zero <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|dmem:DMEM_INST
+|top_fpga|TOP:DUT|dmem:DMEM_INST
 clk => mem~39.CLK
 clk => mem~0.CLK
 clk => mem~1.CLK
@@ -1597,5 +1644,233 @@ ReadData[28] <= mem.DATAOUT28
 ReadData[29] <= mem.DATAOUT29
 ReadData[30] <= mem.DATAOUT30
 ReadData[31] <= mem.DATAOUT31
+
+
+|top_fpga|dec7seg:dec7seg_0
+sortie[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+sortie[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+sortie[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+sortie[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+sortie[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+sortie[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+sortie[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+entree[0] => Mux0.IN19
+entree[0] => Mux1.IN19
+entree[0] => Mux2.IN19
+entree[0] => Mux3.IN19
+entree[0] => Mux4.IN19
+entree[0] => Mux5.IN19
+entree[0] => Mux6.IN19
+entree[1] => Mux0.IN18
+entree[1] => Mux1.IN18
+entree[1] => Mux2.IN18
+entree[1] => Mux3.IN18
+entree[1] => Mux4.IN18
+entree[1] => Mux5.IN18
+entree[1] => Mux6.IN18
+entree[2] => Mux0.IN17
+entree[2] => Mux1.IN17
+entree[2] => Mux2.IN17
+entree[2] => Mux3.IN17
+entree[2] => Mux4.IN17
+entree[2] => Mux5.IN17
+entree[2] => Mux6.IN17
+entree[3] => Mux0.IN16
+entree[3] => Mux1.IN16
+entree[3] => Mux2.IN16
+entree[3] => Mux3.IN16
+entree[3] => Mux4.IN16
+entree[3] => Mux5.IN16
+entree[3] => Mux6.IN16
+
+
+|top_fpga|dec7seg:dec7seg_1
+sortie[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+sortie[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+sortie[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+sortie[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+sortie[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+sortie[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+sortie[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+entree[0] => Mux0.IN19
+entree[0] => Mux1.IN19
+entree[0] => Mux2.IN19
+entree[0] => Mux3.IN19
+entree[0] => Mux4.IN19
+entree[0] => Mux5.IN19
+entree[0] => Mux6.IN19
+entree[1] => Mux0.IN18
+entree[1] => Mux1.IN18
+entree[1] => Mux2.IN18
+entree[1] => Mux3.IN18
+entree[1] => Mux4.IN18
+entree[1] => Mux5.IN18
+entree[1] => Mux6.IN18
+entree[2] => Mux0.IN17
+entree[2] => Mux1.IN17
+entree[2] => Mux2.IN17
+entree[2] => Mux3.IN17
+entree[2] => Mux4.IN17
+entree[2] => Mux5.IN17
+entree[2] => Mux6.IN17
+entree[3] => Mux0.IN16
+entree[3] => Mux1.IN16
+entree[3] => Mux2.IN16
+entree[3] => Mux3.IN16
+entree[3] => Mux4.IN16
+entree[3] => Mux5.IN16
+entree[3] => Mux6.IN16
+
+
+|top_fpga|dec7seg:dec7seg_2
+sortie[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+sortie[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+sortie[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+sortie[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+sortie[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+sortie[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+sortie[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+entree[0] => Mux0.IN19
+entree[0] => Mux1.IN19
+entree[0] => Mux2.IN19
+entree[0] => Mux3.IN19
+entree[0] => Mux4.IN19
+entree[0] => Mux5.IN19
+entree[0] => Mux6.IN19
+entree[1] => Mux0.IN18
+entree[1] => Mux1.IN18
+entree[1] => Mux2.IN18
+entree[1] => Mux3.IN18
+entree[1] => Mux4.IN18
+entree[1] => Mux5.IN18
+entree[1] => Mux6.IN18
+entree[2] => Mux0.IN17
+entree[2] => Mux1.IN17
+entree[2] => Mux2.IN17
+entree[2] => Mux3.IN17
+entree[2] => Mux4.IN17
+entree[2] => Mux5.IN17
+entree[2] => Mux6.IN17
+entree[3] => Mux0.IN16
+entree[3] => Mux1.IN16
+entree[3] => Mux2.IN16
+entree[3] => Mux3.IN16
+entree[3] => Mux4.IN16
+entree[3] => Mux5.IN16
+entree[3] => Mux6.IN16
+
+
+|top_fpga|dec7seg:dec7seg_3
+sortie[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+sortie[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+sortie[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+sortie[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+sortie[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+sortie[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+sortie[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+entree[0] => Mux0.IN19
+entree[0] => Mux1.IN19
+entree[0] => Mux2.IN19
+entree[0] => Mux3.IN19
+entree[0] => Mux4.IN19
+entree[0] => Mux5.IN19
+entree[0] => Mux6.IN19
+entree[1] => Mux0.IN18
+entree[1] => Mux1.IN18
+entree[1] => Mux2.IN18
+entree[1] => Mux3.IN18
+entree[1] => Mux4.IN18
+entree[1] => Mux5.IN18
+entree[1] => Mux6.IN18
+entree[2] => Mux0.IN17
+entree[2] => Mux1.IN17
+entree[2] => Mux2.IN17
+entree[2] => Mux3.IN17
+entree[2] => Mux4.IN17
+entree[2] => Mux5.IN17
+entree[2] => Mux6.IN17
+entree[3] => Mux0.IN16
+entree[3] => Mux1.IN16
+entree[3] => Mux2.IN16
+entree[3] => Mux3.IN16
+entree[3] => Mux4.IN16
+entree[3] => Mux5.IN16
+entree[3] => Mux6.IN16
+
+
+|top_fpga|dec7seg:dec7seg_4
+sortie[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+sortie[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+sortie[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+sortie[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+sortie[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+sortie[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+sortie[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+entree[0] => Mux0.IN19
+entree[0] => Mux1.IN19
+entree[0] => Mux2.IN19
+entree[0] => Mux3.IN19
+entree[0] => Mux4.IN19
+entree[0] => Mux5.IN19
+entree[0] => Mux6.IN19
+entree[1] => Mux0.IN18
+entree[1] => Mux1.IN18
+entree[1] => Mux2.IN18
+entree[1] => Mux3.IN18
+entree[1] => Mux4.IN18
+entree[1] => Mux5.IN18
+entree[1] => Mux6.IN18
+entree[2] => Mux0.IN17
+entree[2] => Mux1.IN17
+entree[2] => Mux2.IN17
+entree[2] => Mux3.IN17
+entree[2] => Mux4.IN17
+entree[2] => Mux5.IN17
+entree[2] => Mux6.IN17
+entree[3] => Mux0.IN16
+entree[3] => Mux1.IN16
+entree[3] => Mux2.IN16
+entree[3] => Mux3.IN16
+entree[3] => Mux4.IN16
+entree[3] => Mux5.IN16
+entree[3] => Mux6.IN16
+
+
+|top_fpga|dec7seg:dec7seg_5
+sortie[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+sortie[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+sortie[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+sortie[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+sortie[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+sortie[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+sortie[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+entree[0] => Mux0.IN19
+entree[0] => Mux1.IN19
+entree[0] => Mux2.IN19
+entree[0] => Mux3.IN19
+entree[0] => Mux4.IN19
+entree[0] => Mux5.IN19
+entree[0] => Mux6.IN19
+entree[1] => Mux0.IN18
+entree[1] => Mux1.IN18
+entree[1] => Mux2.IN18
+entree[1] => Mux3.IN18
+entree[1] => Mux4.IN18
+entree[1] => Mux5.IN18
+entree[1] => Mux6.IN18
+entree[2] => Mux0.IN17
+entree[2] => Mux1.IN17
+entree[2] => Mux2.IN17
+entree[2] => Mux3.IN17
+entree[2] => Mux4.IN17
+entree[2] => Mux5.IN17
+entree[2] => Mux6.IN17
+entree[3] => Mux0.IN16
+entree[3] => Mux1.IN16
+entree[3] => Mux2.IN16
+entree[3] => Mux3.IN16
+entree[3] => Mux4.IN16
+entree[3] => Mux5.IN16
+entree[3] => Mux6.IN16
 
 
