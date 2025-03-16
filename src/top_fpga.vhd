@@ -31,7 +31,7 @@ END ENTITY TOP_FPGA;
 
 ARCHITECTURE rtl OF top_fpga IS
 	SIGNAL Memwrite               : STD_LOGIC;
-	SIGNAL PC                     : STD_LOGIC_VECTOR(9 DOWNTO 2);
+	SIGNAL PC                     : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL WriteData, DataAddress : STD_LOGIC_VECTOR(31 DOWNTO 0);
 BEGIN
 	-- Instantiation du top
