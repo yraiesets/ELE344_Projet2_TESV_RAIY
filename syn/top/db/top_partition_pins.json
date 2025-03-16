@@ -176,7 +176,219 @@
 					"strict" : false
 				},
 				{
+<<<<<<< HEAD
+					"name" : "WriteData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[15]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[16]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[17]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[18]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[19]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[20]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[21]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[22]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[23]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[24]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[25]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[26]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[27]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[28]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[29]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[30]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteData[31]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[15]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[16]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[17]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[18]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[19]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[20]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[21]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[22]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[23]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[24]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[25]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[26]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[27]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[28]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[29]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[30]",
+					"strict" : false
+				},
+				{
+					"name" : "DataAddress[31]",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "Reset",
+=======
 					"name" : "KEY[0]",
+>>>>>>> main
 					"strict" : false
 				}
 			]

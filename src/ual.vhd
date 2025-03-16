@@ -11,9 +11,9 @@
 --              ou arithmetique definie par `ualControl`.
 -- =============================================================
 
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
+LIBRARY IEEE;
+USE IEEE.NUMERIC_STD.ALL;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY UAL IS
 

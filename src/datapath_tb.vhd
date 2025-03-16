@@ -1,16 +1,16 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
-ENTITY datapath_tb IS
-END datapath_tb;
+ENTITY DATAPATH_TB IS
+END DATAPATH_TB;
 
-ARCHITECTURE tb OF datapath_tb IS
+ARCHITECTURE tb OF DATAPATH_TB IS
 
-    -- Déclaration des constantes
+    -- Declaration des constantes
     CONSTANT N : INTEGER := 32;
 
-    -- Déclaration des signaux pour le test
+    -- Declaration des signaux pour le test
     SIGNAL Clk         : STD_LOGIC := '0';
     SIGNAL Reset       : STD_LOGIC := '0';
     SIGNAL MemtoReg    : STD_LOGIC := '0';
@@ -21,9 +21,9 @@ ARCHITECTURE tb OF datapath_tb IS
     SIGNAL Jump        : STD_LOGIC := '0';
     SIGNAL MemReadIn   : STD_LOGIC := '0';
     SIGNAL MemWriteIn  : STD_LOGIC := '0';
-    SIGNAL AluControl  : STD_LOGIC_VECTOR(3 DOWNTO 0) := (others => '0');
-    SIGNAL Instruction : STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (others => '0');
-    SIGNAL ReadData    : STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (others => '0');
+    SIGNAL AluControl  : STD_LOGIC_VECTOR(3 DOWNTO 0);
+    SIGNAL Instruction : STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+    SIGNAL ReadData    : STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 
     SIGNAL MemReadOut  : STD_LOGIC;
     SIGNAL MemWriteOut : STD_LOGIC;
@@ -34,7 +34,7 @@ ARCHITECTURE tb OF datapath_tb IS
 BEGIN
 
     -- Instanciation du Datapath
-    DUT: ENTITY work.datapath
+    DUT: ENTITY work.DATAPATH(rtl)
         PORT MAP(
             Clk         => Clk,
             Reset       => Reset,
@@ -56,10 +56,10 @@ BEGIN
             WriteData   => WriteData
         );
 
-    -- Processus de test avec vérifications
+    -- Processus de test avec verifications
     PROCESS
     BEGIN
-        -- Attente du reset (il sera forcé via le .do)
+        -- Attente du reset (force via le fichier datapath_tb.do)
         WAIT FOR 20 ns;
 
         -- Test 1 : ADD ($3 = $1 + $2)
@@ -72,7 +72,7 @@ BEGIN
         WAIT FOR 20 ns;
 
         ASSERT AluResult = X"00000006"
-        REPORT "Erreur: ADD a donné une mauvaise valeur." SEVERITY ERROR;
+        REPORT "Erreur: ADD a donne une mauvaise valeur." SEVERITY ERROR;
 
         -- Test 2 : ADDI ($4 = $0 + 10)
         Instruction <= X"2004000A"; -- ADDI $4, $0, 10
@@ -84,7 +84,7 @@ BEGIN
         WAIT FOR 20 ns;
 
         ASSERT AluResult = X"0000000A"
-        REPORT "Erreur: ADDI n'a pas retourné la valeur correcte." SEVERITY ERROR;
+        REPORT "Erreur: ADDI n'a pas retourne la valeur correcte." SEVERITY ERROR;
 
         -- Test 3 : LW ($5 ? MEM[0])
         Instruction <= X"8C050000"; -- LW $5, 0($0)
@@ -92,43 +92,42 @@ BEGIN
         MemtoReg <= '1';
         AluSrc <= '1';
         RegWrite <= '1';
-        ReadData <= X"0000000F"; -- Simulation de la valeur en mémoire
+        ReadData <= X"0000000F"; -- Simulation de la valeur en memoire
         WAIT FOR 20 ns;
 
         ASSERT WriteData = X"0000000F"
-        REPORT "Erreur: LW n'a pas chargé la valeur correcte." SEVERITY ERROR;
+        REPORT "Erreur: LW n'a pas charge la valeur correcte." SEVERITY ERROR;
 
         -- Test 4 : SW (MEM[0] ? $6)
         Instruction <= X"AC060000"; -- SW $6, 0($0)
         MemReadIn <= '0';
         MemWriteIn <= '1';
         RegWrite <= '0';
-        WriteData <= X"00000020"; -- Simulation de l'écriture en mémoire
+        WriteData <= X"00000020"; -- Simulation de l'ecriture en memoire
         WAIT FOR 20 ns;
 
         ASSERT MemWriteOut = '1'
-        REPORT "Erreur: SW n'a pas activé le signal d'écriture mémoire." SEVERITY ERROR;
+        REPORT "Erreur: SW n'a pas active le signal d'ecriture memoire." SEVERITY ERROR;
 
-        -- Test 5 : BEQ ($5 == $5 ? PC <- PC + Offset)
+        -- Test 5 : BEQ ($5 == $5 ? PC += Offset)
         Instruction <= X"10050002"; -- BEQ $5, $5, label
         Branch <= '1';
         WAIT FOR 20 ns;
 
         ASSERT PC = X"00000008"
-        REPORT "Erreur: BEQ n'a pas modifié le PC correctement." SEVERITY ERROR;
+        REPORT "Erreur: BEQ n'a pas modifie le PC correctement." SEVERITY ERROR;
 
         -- Test 6 : JUMP (PC <- 0x10)
         Instruction <= X"08000004"; -- J 0x10
-        Jump <= '1';
+        Jump <= '1'; 
         WAIT FOR 20 ns;
 
         ASSERT PC = X"00000010"
-        REPORT "Erreur: JUMP n'a pas modifié le PC correctement." SEVERITY ERROR;
+        REPORT "Erreur: JUMP n'a pas modifie le PC correctement." SEVERITY ERROR;
 
         -- Fin du test
-        REPORT "Test terminé avec succès." SEVERITY NOTE;
+        REPORT "Test termine avec succes." SEVERITY NOTE;
         WAIT;
     END PROCESS;
 
 END ARCHITECTURE tb;
-
