@@ -9,12 +9,12 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY TOP IS
 
 	PORT (
-		Clk       : IN  STD_LOGIC;
-		Reset     : IN  STD_LOGIC;
+		Clk       	: IN  STD_LOGIC;
+		Reset     	: IN  STD_LOGIC;
 
-		PC        : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		WriteData : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		AluResult : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+		PC        	: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		WriteData 	: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		DataAddress 	: OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
 
 END ENTITY TOP;
@@ -27,7 +27,7 @@ ARCHITECTURE rtl OF TOP IS
 
 BEGIN
 
-	-- Instanciation de la mémoire d'instructions
+	-- Instanciation de la memoire d'instructions
 	IMEM_INST : ENTITY work.IMEM(imem_arch)
 		PORT MAP (
 			adresse		=>	PCIntern(9 DOWNTO 2),
@@ -48,7 +48,7 @@ BEGIN
 			AluResult	=>	AluResultIntern
 		);
 
-	-- Instanciation de la mémoire de données
+	-- Instanciation de la memoire de donnees
 	DMEM_INST : ENTITY work.DMEM(dmem_arch)
 		PORT MAP (
 			clk		=>	Clk,
@@ -60,6 +60,6 @@ BEGIN
 
 	PC <= PCIntern;
 	WriteData <= WriteDataIntern;
-	AluResult <= AluResultIntern;
+	DataAddress <= AluResultIntern;
 
 END ARCHITECTURE rtl;

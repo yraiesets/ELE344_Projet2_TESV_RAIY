@@ -16,7 +16,7 @@ add wave -bin /TOP/Clk
 add wave -bin /TOP/reset
 add wave -dec /TOP/PC(9:2)
 add wave -dec /TOP/WriteData
-add wave -dec /TOP/AluResult
+add wave -dec /TOP/DataAddress
 
 force clk 1 0 ns, 0 10 ns -repeat 20 ns
 force reset 1, 0 15 ns

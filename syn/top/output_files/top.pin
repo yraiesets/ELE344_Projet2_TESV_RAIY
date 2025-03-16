@@ -71,13 +71,13 @@ CHIP  "top"  ASSIGNED TO AN: 10M50DAF484C7G
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A1        : gnd    :                   :         :           :                
-AluResult[5]                 : A2        : output : 2.5 V             :         : 8         : N              
+DataAddress[5]               : A2        : output : 2.5 V             :         : 8         : N              
 WriteData[2]                 : A3        : output : 2.5 V             :         : 8         : N              
 WriteData[12]                : A4        : output : 2.5 V             :         : 8         : N              
 WriteData[8]                 : A5        : output : 2.5 V             :         : 8         : N              
 WriteData[13]                : A6        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :         : 7         :                
-AluResult[11]                : A8        : output : 2.5 V             :         : 7         : N              
+DataAddress[11]              : A8        : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A9        :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A11       :        :                   :         : 7         :                
@@ -100,13 +100,13 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AA5       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA6       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA7       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA8       :        :                   :         : 3         :                
-AluResult[29]                : AA9       : output : 2.5 V             :         : 3         : N              
-AluResult[24]                : AA10      : output : 2.5 V             :         : 3         : N              
+DataAddress[29]              : AA9       : output : 2.5 V             :         : 3         : N              
+DataAddress[24]              : AA10      : output : 2.5 V             :         : 3         : N              
 PC[29]                       : AA11      : output : 2.5 V             :         : 4         : N              
-AluResult[28]                : AA12      : output : 2.5 V             :         : 4         : N              
-AluResult[15]                : AA13      : output : 2.5 V             :         : 4         : N              
+DataAddress[28]              : AA12      : output : 2.5 V             :         : 4         : N              
+DataAddress[15]              : AA13      : output : 2.5 V             :         : 4         : N              
 PC[23]                       : AA14      : output : 2.5 V             :         : 4         : N              
-AluResult[31]                : AA15      : output : 2.5 V             :         : 4         : N              
+DataAddress[31]              : AA15      : output : 2.5 V             :         : 4         : N              
 WriteData[26]                : AA16      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA17      :        :                   :         : 4         :                
 GND                          : AA18      : gnd    :                   :         :           :                
@@ -118,11 +118,11 @@ GND                          : AB1       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB2       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB3       :        :                   :         : 3         :                
 WriteData[23]                : AB4       : output : 2.5 V             :         : 3         : N              
-AluResult[10]                : AB5       : output : 2.5 V             :         : 3         : N              
+DataAddress[10]              : AB5       : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB6       :        :                   :         : 3         :                
 PC[3]                        : AB7       : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB8       :        :                   :         : 3         :                
-AluResult[27]                : AB9       : output : 2.5 V             :         : 3         : N              
+DataAddress[27]              : AB9       : output : 2.5 V             :         : 3         : N              
 PC[7]                        : AB10      : output : 2.5 V             :         : 4         : N              
 PC[8]                        : AB11      : output : 2.5 V             :         : 4         : N              
 PC[31]                       : AB12      : output : 2.5 V             :         : 4         : N              
@@ -136,7 +136,7 @@ PC[22]                       : AB19      : output : 2.5 V             :         
 PC[21]                       : AB20      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB21      :        :                   :         : 4         :                
 GND                          : AB22      : gnd    :                   :         :           :                
-AluResult[19]                : B1        : output : 2.5 V             :         : 8         : N              
+DataAddress[19]              : B1        : output : 2.5 V             :         : 8         : N              
 WriteData[28]                : B2        : output : 2.5 V             :         : 8         : N              
 WriteData[14]                : B3        : output : 2.5 V             :         : 8         : N              
 WriteData[20]                : B4        : output : 2.5 V             :         : 8         : N              
@@ -184,10 +184,10 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 1B        :                
 GND                          : D4        : gnd    :                   :         :           :                
-AluResult[8]                 : D5        : output : 2.5 V             :         : 8         : N              
-AluResult[17]                : D6        : output : 2.5 V             :         : 8         : N              
-AluResult[21]                : D7        : output : 2.5 V             :         : 8         : N              
-AluResult[7]                 : D8        : output : 2.5 V             :         : 8         : N              
+DataAddress[8]               : D5        : output : 2.5 V             :         : 8         : N              
+DataAddress[17]              : D6        : output : 2.5 V             :         : 8         : N              
+DataAddress[21]              : D7        : output : 2.5 V             :         : 8         : N              
+DataAddress[7]               : D8        : output : 2.5 V             :         : 8         : N              
 WriteData[31]                : D9        : output : 2.5 V             :         : 8         : N              
 WriteData[1]                 : D10       : output : 2.5 V             :         : 8         : N              
 GND                          : D11       : gnd    :                   :         :           :                
@@ -207,12 +207,12 @@ GND                          : E2        : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 1A        :                
 NC                           : E5        :        :                   :         :           :                
-AluResult[13]                : E6        : output : 2.5 V             :         : 8         : N              
+DataAddress[13]              : E6        : output : 2.5 V             :         : 8         : N              
 GND                          : E7        : gnd    :                   :         :           :                
-AluResult[4]                 : E8        : output : 2.5 V             :         : 8         : N              
+DataAddress[4]               : E8        : output : 2.5 V             :         : 8         : N              
 WriteData[18]                : E9        : output : 2.5 V             :         : 8         : N              
 WriteData[17]                : E10       : output : 2.5 V             :         : 8         : N              
-AluResult[3]                 : E11       : output : 2.5 V             :         : 8         : N              
+DataAddress[3]               : E11       : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E12       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E13       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E14       :        :                   :         : 7         :                
@@ -244,7 +244,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F17       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F20       :        :                   :         : 6         :                
-AluResult[0]                 : F21       : output : 2.5 V             :         : 6         : N              
+DataAddress[0]               : F21       : output : 2.5 V             :         : 6         : N              
 WriteData[5]                 : F22       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1B        :                
 ~ALTERA_TCK~ / RESERVED_INPUT : G2        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
@@ -278,8 +278,8 @@ VCCA_ADC                     : H7        : power  :                   : 2.5V    
 VCCA3                        : H8        : power  :                   : 2.5V    :           :                
 ~ALTERA_nCONFIG~ / RESERVED_INPUT : H9        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
 ~ALTERA_CONFIG_SEL~ / RESERVED_INPUT : H10       : input  : 2.5 V             :         : 8         : N              
-AluResult[14]                : H11       : output : 2.5 V             :         : 8         : N              
-AluResult[16]                : H12       : output : 2.5 V             :         : 7         : N              
+DataAddress[14]              : H11       : output : 2.5 V             :         : 8         : N              
+DataAddress[16]              : H12       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H13       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 7         :                
 VCCA2                        : H15       : power  :                   : 2.5V    :           :                
@@ -382,7 +382,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : N1        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : N2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N4        :        :                   :         : 2         :                
-AluResult[12]                : N5        : output : 2.5 V             :         : 2         : N              
+DataAddress[12]              : N5        : output : 2.5 V             :         : 2         : N              
 VCCIO2                       : N6        : power  :                   : 2.5V    : 2         :                
 VCCIO2                       : N7        : power  :                   : 2.5V    : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N8        :        :                   :         : 2         :                
@@ -432,11 +432,11 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :      
 VCCA1                        : R8        : power  :                   : 2.5V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R9        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R10       :        :                   :         : 3         :                
-AluResult[18]                : R11       : output : 2.5 V             :         : 3         : N              
-AluResult[20]                : R12       : output : 2.5 V             :         : 4         : N              
+DataAddress[18]              : R11       : output : 2.5 V             :         : 3         : N              
+DataAddress[20]              : R12       : output : 2.5 V             :         : 4         : N              
 PC[16]                       : R13       : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R14       :        :                   :         : 5         :                
-AluResult[22]                : R15       : output : 2.5 V             :         : 5         : N              
+DataAddress[22]              : R15       : output : 2.5 V             :         : 5         : N              
 VCCIO5                       : R16       : power  :                   : 2.5V    : 5         :                
 VCCIO5                       : R17       : power  :                   : 2.5V    : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R18       :        :                   :         : 5         :                
@@ -465,7 +465,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : T18       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : T19       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T20       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T21       :        :                   :         : 5         :                
-AluResult[23]                : T22       : output : 2.5 V             :         : 5         : N              
+DataAddress[23]              : T22       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U3        :        :                   :         : 2         :                
@@ -484,7 +484,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : U15       :        :                   :      
 VCCD_PLL4                    : U16       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U17       :        :                   :         : 5         :                
 WriteData[29]                : U18       : output : 2.5 V             :         : 5         : N              
-AluResult[6]                 : U19       : output : 2.5 V             :         : 5         : N              
+DataAddress[6]               : U19       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U20       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U21       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U22       :        :                   :         : 5         :                
@@ -496,7 +496,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : V5        :        :                   :      
 GND                          : V6        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V8        :        :                   :         : 3         :                
-AluResult[26]                : V9        : output : 2.5 V             :         : 3         : N              
+DataAddress[26]              : V9        : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V10       :        :                   :         : 3         :                
 PC[27]                       : V11       : output : 2.5 V             :         : 4         : N              
 PC[10]                       : V12       : output : 2.5 V             :         : 4         : N              
@@ -507,18 +507,18 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : V16       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : V17       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V18       :        :                   :         : 5         :                
 GND                          : V19       : gnd    :                   :         :           :                
-AluResult[1]                 : V20       : output : 2.5 V             :         : 5         : N              
+DataAddress[1]               : V20       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V21       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V22       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W3        :        :                   :         : 3         :                
-AluResult[9]                 : W4        : output : 2.5 V             :         : 3         : N              
+DataAddress[9]               : W4        : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : W5        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W6        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W7        :        :                   :         : 3         :                
 WriteData[19]                : W8        : output : 2.5 V             :         : 3         : N              
-AluResult[2]                 : W9        : output : 2.5 V             :         : 3         : N              
+DataAddress[2]               : W9        : output : 2.5 V             :         : 3         : N              
 PC[5]                        : W10       : output : 2.5 V             :         : 3         : N              
 PC[14]                       : W11       : output : 2.5 V             :         : 4         : N              
 PC[17]                       : W12       : output : 2.5 V             :         : 4         : N              
@@ -528,7 +528,7 @@ PC[13]                       : W15       : output : 2.5 V             :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : W16       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W17       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W18       :        :                   :         : 4         :                
-AluResult[25]                : W19       : output : 2.5 V             :         : 5         : N              
+DataAddress[25]              : W19       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : W20       :        :                   :         : 5         :                
 GND                          : W21       : gnd    :                   :         :           :                
 WriteData[16]                : W22       : output : 2.5 V             :         : 5         : N              
@@ -542,7 +542,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : Y7        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y8        :        :                   :         : 3         :                
 GND                          : Y9        : gnd    :                   :         :           :                
 PC[4]                        : Y10       : output : 2.5 V             :         : 3         : N              
-AluResult[30]                : Y11       : output : 2.5 V             :         : 4         : N              
+DataAddress[30]              : Y11       : output : 2.5 V             :         : 4         : N              
 GND                          : Y12       : gnd    :                   :         :           :                
 PC[12]                       : Y13       : output : 2.5 V             :         : 4         : N              
 PC[18]                       : Y14       : output : 2.5 V             :         : 4         : N              
