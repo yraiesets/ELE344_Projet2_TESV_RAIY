@@ -1,6 +1,6 @@
 Flow report for top_fpga
-Sun Mar 16 19:25:38 2025
-Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Sun Mar 16 21:17:13 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -21,7 +21,7 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2023  Intel Corporation. All rights reserved.
+Copyright (C) 2024  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Sun Mar 16 19:25:34 2025          ;
-; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Flow Status                        ; Successful - Sun Mar 16 21:17:08 2025          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top_fpga                                       ;
 ; Top-level Entity Name              ; TOP_FPGA                                       ;
 ; Family                             ; MAX 10                                         ;
 ; Device                             ; 10M50DAF484C7G                                 ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 5,509 / 49,760 ( 11 % )                        ;
-;     Total combinational functions  ; 3,426 / 49,760 ( 7 % )                         ;
-;     Dedicated logic registers      ; 4,262 / 49,760 ( 9 % )                         ;
-; Total registers                    ; 4262                                           ;
+; Total logic elements               ; 5,512 / 49,760 ( 11 % )                        ;
+;     Total combinational functions  ; 3,438 / 49,760 ( 7 % )                         ;
+;     Dedicated logic registers      ; 4,264 / 49,760 ( 9 % )                         ;
+; Total registers                    ; 4264                                           ;
 ; Total pins                         ; 44 / 360 ( 12 % )                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                          ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/16/2025 19:25:01 ;
+; Start date & time ; 03/16/2025 21:16:32 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top_fpga            ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 6781416888211.174216750115310          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 255757346136526.174217419206856        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NUM_PARALLEL_PROCESSORS             ; 8                                      ; --            ; --          ; --         ;
@@ -96,24 +96,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 547 MB              ; 00:00:14                           ;
-; Fitter               ; 00:00:21     ; 1.6                     ; 1453 MB             ; 00:00:40                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 392 MB              ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:04     ; 3.5                     ; 653 MB              ; 00:00:09                           ;
-; Total                ; 00:00:35     ; --                      ; --                  ; 00:01:04                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4916 MB             ; 00:00:17                           ;
+; Fitter               ; 00:00:22     ; 1.5                     ; 5996 MB             ; 00:00:39                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4836 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:04     ; 2.8                     ; 4994 MB             ; 00:00:10                           ;
+; Total                ; 00:00:38     ; --                      ; --                  ; 00:01:08                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                                    ;
-+----------------------+------------------+--------------------+--------------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name            ; OS Version         ; Processor type ;
-+----------------------+------------------+--------------------+--------------------+----------------+
-; Analysis & Synthesis ; cachyos-desktop  ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
-; Fitter               ; cachyos-desktop  ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
-; Assembler            ; cachyos-desktop  ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
-; Timing Analyzer      ; cachyos-desktop  ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
-+----------------------+------------------+--------------------+--------------------+----------------+
++-------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                     ;
++----------------------+-------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname  ; OS Name    ; OS Version ; Processor type ;
++----------------------+-------------------+------------+------------+----------------+
+; Analysis & Synthesis ; Windows11-Desktop ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Windows11-Desktop ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Windows11-Desktop ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Windows11-Desktop ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+-------------------+------------+------------+----------------+
 
 
 ------------

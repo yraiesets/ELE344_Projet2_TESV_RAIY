@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX0[5]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX0[4]",
 					"strict" : false
 				},

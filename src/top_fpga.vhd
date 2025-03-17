@@ -19,8 +19,8 @@ ENTITY TOP_FPGA IS
 
 	PORT(
 		KEY  : IN  STD_LOGIC_VECTOR(0 TO 1);  -- KEY[0]=reset, KEY[1]=clock
-		HEX0 : OUT STD_LOGIC_VECTOR(0 TO 6);  -- PC(3 downto 0) 
-		HEX1 : OUT STD_LOGIC_VECTOR(0 TO 6);  -- PC(7 downto 4) 
+		HEX0 : OUT STD_LOGIC_VECTOR(0 TO 6);  -- PC(5 downto 2) 
+		HEX1 : OUT STD_LOGIC_VECTOR(0 TO 6);  -- PC(9 downto 6) 
 		HEX2 : OUT STD_LOGIC_VECTOR(0 TO 6);  -- DataAddress(3 downto 0) 
 		HEX3 : OUT STD_LOGIC_VECTOR(0 TO 6);  -- DataAddress(7 downto 4) 
 		HEX4 : OUT STD_LOGIC_VECTOR(0 TO 6);  -- WriteData(3 downto 0) 
@@ -42,16 +42,16 @@ BEGIN
 	-- Instantiation du top
 	DUT : ENTITY work.TOP(rtl)
 		PORT MAP(
-			Clk        => KEY(1),
-			Reset      => ResetIntern,
-			PC         => PC,
-			WriteData  => WriteData,
-			DataAddress => DataAddress
+			Clk        	=> KEY(1),
+			Reset      	=> ResetIntern,
+			PC         	=> PC,
+			WriteData  	=> WriteData,
+			DataAddress 	=> DataAddress
 		);
 
 	-- Afficheurs 7-segments pour les ports de sortie
-	dec7seg_0 : ENTITY work.dec7seg PORT MAP (HEX0, PC(3 DOWNTO 0));
-	dec7seg_1 : ENTITY work.dec7seg PORT MAP (HEX1, PC(7 DOWNTO 4));
+	dec7seg_0 : ENTITY work.dec7seg PORT MAP (HEX0, PC(5 downto 2));
+	dec7seg_1 : ENTITY work.dec7seg PORT MAP (HEX1, PC(9 downto 6));
 	dec7seg_2 : ENTITY work.dec7seg PORT MAP (HEX2, DataAddress(3 DOWNTO 0));
 	dec7seg_3 : ENTITY work.dec7seg PORT MAP (HEX3, DataAddress(7 DOWNTO 4));
 	dec7seg_4 : ENTITY work.dec7seg PORT MAP (HEX4, WriteData(3 DOWNTO 0));

@@ -1,6 +1,6 @@
 Analysis & Synthesis report for top_fpga
-Sun Mar 16 19:25:09 2025
-Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Sun Mar 16 21:16:42 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -31,7 +31,7 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2023  Intel Corporation. All rights reserved.
+Copyright (C) 2024  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -51,15 +51,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 16 19:25:09 2025          ;
-; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 16 21:16:42 2025          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top_fpga                                       ;
 ; Top-level Entity Name              ; TOP_FPGA                                       ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 7,617                                          ;
-;     Total combinational functions  ; 3,425                                          ;
-;     Dedicated logic registers      ; 4,262                                          ;
-; Total registers                    ; 4262                                           ;
+; Total logic elements               ; 7,629                                          ;
+;     Total combinational functions  ; 3,437                                          ;
+;     Dedicated logic registers      ; 4,264                                          ;
+; Total registers                    ; 4264                                           ;
 ; Total pins                         ; 44                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -170,7 +170,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
 ;     Processor 5            ;   0.1%      ;
@@ -180,22 +180,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                              ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                       ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
-; ../../src/ual.vhd                ; yes             ; User VHDL File  ; /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/ual.vhd        ;         ;
-; ../../src/top_fpga.vhd           ; yes             ; User VHDL File  ; /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd   ;         ;
-; ../../src/top.vhd                ; yes             ; User VHDL File  ; /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd        ;         ;
-; ../../src/regfile.vhd            ; yes             ; User VHDL File  ; /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/regfile.vhd    ;         ;
-; ../../src/mips.vhd               ; yes             ; User VHDL File  ; /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd       ;         ;
-; ../../src/imem.vhd               ; yes             ; User VHDL File  ; /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/imem.vhd       ;         ;
-; ../../src/dmem.vhd               ; yes             ; User VHDL File  ; /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dmem.vhd       ;         ;
-; ../../src/dec7seg.vhd            ; yes             ; User VHDL File  ; /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd    ;         ;
-; ../../src/datapath.vhd           ; yes             ; User VHDL File  ; /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd   ;         ;
-; ../../src/controller.vhd         ; yes             ; User VHDL File  ; /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/controller.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+; ../../src/ual.vhd                ; yes             ; User VHDL File  ; C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/ual.vhd        ;         ;
+; ../../src/top_fpga.vhd           ; yes             ; User VHDL File  ; C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd   ;         ;
+; ../../src/top.vhd                ; yes             ; User VHDL File  ; C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd        ;         ;
+; ../../src/regfile.vhd            ; yes             ; User VHDL File  ; C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/regfile.vhd    ;         ;
+; ../../src/mips.vhd               ; yes             ; User VHDL File  ; C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd       ;         ;
+; ../../src/imem.vhd               ; yes             ; User VHDL File  ; C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/imem.vhd       ;         ;
+; ../../src/dmem.vhd               ; yes             ; User VHDL File  ; C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dmem.vhd       ;         ;
+; ../../src/dec7seg.vhd            ; yes             ; User VHDL File  ; C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd    ;         ;
+; ../../src/datapath.vhd           ; yes             ; User VHDL File  ; C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd   ;         ;
+; ../../src/controller.vhd         ; yes             ; User VHDL File  ; C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/controller.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -203,20 +203,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 7,617        ;
+; Estimated Total logic elements              ; 7,629        ;
 ;                                             ;              ;
-; Total combinational functions               ; 3425         ;
+; Total combinational functions               ; 3437         ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 3221         ;
-;     -- 3 input functions                    ; 171          ;
-;     -- <=2 input functions                  ; 33           ;
+;     -- 4 input functions                    ; 3231         ;
+;     -- 3 input functions                    ; 174          ;
+;     -- <=2 input functions                  ; 32           ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 3383         ;
-;     -- arithmetic mode                      ; 42           ;
+;     -- normal mode                          ; 3391         ;
+;     -- arithmetic mode                      ; 46           ;
 ;                                             ;              ;
-; Total registers                             ; 4262         ;
-;     -- Dedicated logic registers            ; 4262         ;
+; Total registers                             ; 4264         ;
+;     -- Dedicated logic registers            ; 4264         ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 44           ;
@@ -224,8 +224,8 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[1]~input ;
-; Maximum fan-out                             ; 4262         ;
-; Total fan-out                               ; 26344        ;
+; Maximum fan-out                             ; 4264         ;
+; Total fan-out                               ; 26402        ;
 ; Average fan-out                             ; 3.39         ;
 +---------------------------------------------+--------------+
 
@@ -235,16 +235,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                           ; Entity Name ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------+-------------+--------------+
-; |TOP_FPGA                             ; 3425 (0)            ; 4262 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |TOP_FPGA                                                                     ; TOP_FPGA    ; work         ;
-;    |TOP:DUT|                          ; 3387 (0)            ; 4262 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT                                                             ; TOP         ; work         ;
-;       |MIPS:MIPS_INST|                ; 513 (0)             ; 166 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST                                              ; MIPS        ; work         ;
+; |TOP_FPGA                             ; 3437 (0)            ; 4264 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |TOP_FPGA                                                                     ; TOP_FPGA    ; work         ;
+;    |TOP:DUT|                          ; 3395 (0)            ; 4264 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT                                                             ; TOP         ; work         ;
+;       |MIPS:MIPS_INST|                ; 520 (0)             ; 168 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST                                              ; MIPS        ; work         ;
 ;          |CONTROLLER:CONTROLLER_INST| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|CONTROLLER:CONTROLLER_INST                   ; CONTROLLER  ; work         ;
-;          |DATAPATH:DATAPATH_INST|     ; 506 (102)           ; 166 (6)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST                       ; DATAPATH    ; work         ;
+;          |DATAPATH:DATAPATH_INST|     ; 513 (108)           ; 168 (8)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST                       ; DATAPATH    ; work         ;
 ;             |RegFile:REGISTER_FILE|   ; 272 (272)           ; 160 (160)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE ; RegFile     ; work         ;
-;             |UAL:UAL|                 ; 132 (132)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|UAL:UAL               ; UAL         ; work         ;
+;             |UAL:UAL|                 ; 133 (133)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|UAL:UAL               ; UAL         ; work         ;
 ;       |dmem:DMEM_INST|                ; 2836 (2836)         ; 4096 (4096)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|dmem:DMEM_INST                                              ; dmem        ; work         ;
-;       |imem:IMEM_INST|                ; 38 (38)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|imem:IMEM_INST                                              ; imem        ; work         ;
-;    |dec7seg:dec7seg_0|                ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|dec7seg:dec7seg_0                                                   ; dec7seg     ; work         ;
+;       |imem:IMEM_INST|                ; 39 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|TOP:DUT|imem:IMEM_INST                                              ; imem        ; work         ;
+;    |dec7seg:dec7seg_0|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|dec7seg:dec7seg_0                                                   ; dec7seg     ; work         ;
 ;    |dec7seg:dec7seg_1|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|dec7seg:dec7seg_1                                                   ; dec7seg     ; work         ;
 ;    |dec7seg:dec7seg_2|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|dec7seg:dec7seg_2                                                   ; dec7seg     ; work         ;
 ;    |dec7seg:dec7seg_3|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TOP_FPGA|dec7seg:dec7seg_3                                                   ; dec7seg     ; work         ;
@@ -1029,7 +1029,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem~1059 ; Lost fanout                                                           ;
 ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem~1060 ; Lost fanout                                                           ;
 ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem~1061 ; Lost fanout                                                           ;
-; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[8..31]                ; Lost fanout                                                           ;
+; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[10..31]               ; Lost fanout                                                           ;
 ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem~230  ; Stuck at GND due to stuck port clock_enable                           ;
 ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem~261  ; Stuck at GND due to stuck port clock_enable                           ;
 ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem~260  ; Stuck at GND due to stuck port clock_enable                           ;
@@ -1126,7 +1126,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem~41   ; Stuck at GND due to stuck port clock_enable                           ;
 ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem~40   ; Stuck at GND due to stuck port clock_enable                           ;
 ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem~39   ; Stuck at GND due to stuck port clock_enable                           ;
-; Total Number of Removed Registers = 890                                      ;                                                                       ;
+; Total Number of Removed Registers = 888                                      ;                                                                       ;
 +------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 
@@ -1155,9 +1155,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                            ;                    ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[13], ;
 ;                                                            ;                    ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[12], ;
 ;                                                            ;                    ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[11], ;
-;                                                            ;                    ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[10], ;
-;                                                            ;                    ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[9],  ;
-;                                                            ;                    ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[8]   ;
+;                                                            ;                    ; TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[10]  ;
 +------------------------------------------------------------+--------------------+-------------------------------------------------------------+
 
 
@@ -1166,10 +1164,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4262  ;
+; Total registers                              ; 4264  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 6     ;
-; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 4256  ;
 ; Number of registers using Preset             ; 0     ;
@@ -1181,10 +1179,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[27]        ;
-; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[2]         ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|UAL:UAL|Mux9        ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|UAL:UAL|srcBMux[11] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[21]        ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|PCIntern[11]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|UAL:UAL|Mux29       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |TOP_FPGA|TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|UAL:UAL|srcBMux[28] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
 
 
@@ -1231,7 +1229,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port               ; Type   ; Severity ; Details                                                                             ;
 +--------------------+--------+----------+-------------------------------------------------------------------------------------+
-; pc[31..8]          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc[31..10]         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc[1..0]           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; writedata[31..8]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; dataaddress[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +--------------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1243,22 +1242,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 44                          ;
-; cycloneiii_ff         ; 4262                        ;
-;     CLR SLD           ; 6                           ;
+; cycloneiii_ff         ; 4264                        ;
+;     CLR SLD           ; 8                           ;
 ;     ENA               ; 4256                        ;
-; cycloneiii_lcell_comb ; 3432                        ;
-;     arith             ; 42                          ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 37                          ;
-;     normal            ; 3390                        ;
-;         0 data inputs ; 1                           ;
+; cycloneiii_lcell_comb ; 3443                        ;
+;     arith             ; 46                          ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 39                          ;
+;     normal            ; 3397                        ;
 ;         1 data inputs ; 8                           ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 134                         ;
-;         4 data inputs ; 3221                        ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 135                         ;
+;         4 data inputs ; 3231                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 19.10                       ;
-; Average LUT depth     ; 10.89                       ;
+; Average LUT depth     ; 10.88                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1267,7 +1265,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -1276,67 +1274,65 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Mar 16 19:25:01 2025
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Sun Mar 16 21:16:32 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_fpga -c top_fpga
 Info (20032): Parallel compilation is enabled and will use up to 8 processors
-Info (12021): Found 2 design units, including 1 entities, in source file /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/ual.vhd
-    Info (12022): Found design unit 1: UAL-rtl File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/ual.vhd Line: 31
-    Info (12023): Found entity 1: UAL File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/ual.vhd Line: 18
-Info (12021): Found 2 design units, including 1 entities, in source file /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd
-    Info (12022): Found design unit 1: top_fpga-rtl File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd Line: 32
-    Info (12023): Found entity 1: TOP_FPGA File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd Line: 18
-Info (12021): Found 2 design units, including 1 entities, in source file /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd
-    Info (12022): Found design unit 1: TOP-rtl File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd Line: 22
-    Info (12023): Found entity 1: TOP File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/regfile.vhd
-    Info (12022): Found design unit 1: RegFile-RegFile_arch File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/regfile.vhd Line: 25
-    Info (12023): Found entity 1: RegFile File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/regfile.vhd Line: 17
-Info (12021): Found 2 design units, including 1 entities, in source file /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd
-    Info (12022): Found design unit 1: MIPS-rtl File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd Line: 20
-    Info (12023): Found entity 1: MIPS File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/imem.vhd
-    Info (12022): Found design unit 1: imem-imem_arch File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/imem.vhd Line: 21
-    Info (12023): Found entity 1: imem File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/imem.vhd Line: 15
-Info (12021): Found 2 design units, including 1 entities, in source file /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dmem.vhd
-    Info (12022): Found design unit 1: dmem-dmem_arch File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dmem.vhd Line: 24
-    Info (12023): Found entity 1: dmem File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dmem.vhd Line: 17
-Info (12021): Found 2 design units, including 1 entities, in source file /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd
-    Info (12022): Found design unit 1: dec7seg-dec7seg_archi File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd Line: 18
-    Info (12023): Found entity 1: dec7seg File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd Line: 12
-Info (12021): Found 2 design units, including 1 entities, in source file /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd
-    Info (12022): Found design unit 1: DATAPATH-rtl File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd Line: 39
-    Info (12023): Found entity 1: DATAPATH File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/controller.vhd
-    Info (12022): Found design unit 1: CONTROLLER-rtl File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/controller.vhd Line: 26
-    Info (12023): Found entity 1: CONTROLLER File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/controller.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/yraies/documents/ele344_projet2_tesv_raiy/src/ual.vhd
+    Info (12022): Found design unit 1: UAL-rtl File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/ual.vhd Line: 31
+    Info (12023): Found entity 1: UAL File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/ual.vhd Line: 18
+Info (12021): Found 2 design units, including 1 entities, in source file /users/yraies/documents/ele344_projet2_tesv_raiy/src/top_fpga.vhd
+    Info (12022): Found design unit 1: top_fpga-rtl File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd Line: 32
+    Info (12023): Found entity 1: TOP_FPGA File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd Line: 18
+Info (12021): Found 2 design units, including 1 entities, in source file /users/yraies/documents/ele344_projet2_tesv_raiy/src/top.vhd
+    Info (12022): Found design unit 1: TOP-rtl File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd Line: 22
+    Info (12023): Found entity 1: TOP File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/yraies/documents/ele344_projet2_tesv_raiy/src/regfile.vhd
+    Info (12022): Found design unit 1: RegFile-RegFile_arch File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/regfile.vhd Line: 25
+    Info (12023): Found entity 1: RegFile File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/regfile.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file /users/yraies/documents/ele344_projet2_tesv_raiy/src/mips.vhd
+    Info (12022): Found design unit 1: MIPS-rtl File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd Line: 20
+    Info (12023): Found entity 1: MIPS File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/yraies/documents/ele344_projet2_tesv_raiy/src/imem.vhd
+    Info (12022): Found design unit 1: imem-imem_arch File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/imem.vhd Line: 21
+    Info (12023): Found entity 1: imem File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/imem.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file /users/yraies/documents/ele344_projet2_tesv_raiy/src/dmem.vhd
+    Info (12022): Found design unit 1: dmem-dmem_arch File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dmem.vhd Line: 24
+    Info (12023): Found entity 1: dmem File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dmem.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file /users/yraies/documents/ele344_projet2_tesv_raiy/src/dec7seg.vhd
+    Info (12022): Found design unit 1: dec7seg-dec7seg_archi File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd Line: 18
+    Info (12023): Found entity 1: dec7seg File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dec7seg.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /users/yraies/documents/ele344_projet2_tesv_raiy/src/datapath.vhd
+    Info (12022): Found design unit 1: DATAPATH-rtl File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd Line: 39
+    Info (12023): Found entity 1: DATAPATH File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/yraies/documents/ele344_projet2_tesv_raiy/src/controller.vhd
+    Info (12022): Found design unit 1: CONTROLLER-rtl File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/controller.vhd Line: 26
+    Info (12023): Found entity 1: CONTROLLER File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/controller.vhd Line: 9
 Info (12127): Elaborating entity "top_fpga" for the top level hierarchy
-Info (12129): Elaborating entity "TOP" using architecture "A:rtl" for hierarchy "TOP:DUT" File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd Line: 42
-Info (12129): Elaborating entity "imem" using architecture "A:imem_arch" for hierarchy "TOP:DUT|imem:IMEM_INST" File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd Line: 31
-Info (12129): Elaborating entity "MIPS" using architecture "A:rtl" for hierarchy "TOP:DUT|MIPS:MIPS_INST" File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd Line: 38
-Info (12129): Elaborating entity "CONTROLLER" using architecture "A:rtl" for hierarchy "TOP:DUT|MIPS:MIPS_INST|CONTROLLER:CONTROLLER_INST" File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd Line: 32
-Info (12129): Elaborating entity "DATAPATH" using architecture "A:rtl" for hierarchy "TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST" File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd Line: 48
-Info (12129): Elaborating entity "RegFile" using architecture "A:regfile_arch" for hierarchy "TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE" File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd Line: 67
-Info (12129): Elaborating entity "UAL" using architecture "A:rtl" for hierarchy "TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|UAL:UAL" File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd Line: 83
-Info (12129): Elaborating entity "dmem" using architecture "A:dmem_arch" for hierarchy "TOP:DUT|dmem:DMEM_INST" File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd Line: 52
-Info (12128): Elaborating entity "dec7seg" for hierarchy "dec7seg:dec7seg_0" File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd Line: 52
+Info (12129): Elaborating entity "TOP" using architecture "A:rtl" for hierarchy "TOP:DUT" File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd Line: 43
+Info (12129): Elaborating entity "imem" using architecture "A:imem_arch" for hierarchy "TOP:DUT|imem:IMEM_INST" File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd Line: 31
+Info (12129): Elaborating entity "MIPS" using architecture "A:rtl" for hierarchy "TOP:DUT|MIPS:MIPS_INST" File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd Line: 38
+Info (12129): Elaborating entity "CONTROLLER" using architecture "A:rtl" for hierarchy "TOP:DUT|MIPS:MIPS_INST|CONTROLLER:CONTROLLER_INST" File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd Line: 32
+Info (12129): Elaborating entity "DATAPATH" using architecture "A:rtl" for hierarchy "TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST" File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/mips.vhd Line: 48
+Info (12129): Elaborating entity "RegFile" using architecture "A:regfile_arch" for hierarchy "TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE" File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd Line: 67
+Info (12129): Elaborating entity "UAL" using architecture "A:rtl" for hierarchy "TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|UAL:UAL" File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/datapath.vhd Line: 83
+Info (12129): Elaborating entity "dmem" using architecture "A:dmem_arch" for hierarchy "TOP:DUT|dmem:DMEM_INST" File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top.vhd Line: 52
+Info (12128): Elaborating entity "dec7seg" for hierarchy "dec7seg:dec7seg_0" File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd Line: 53
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276007): RAM logic "TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem" is uninferred due to asynchronous read logic File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/regfile.vhd Line: 27
-    Info (276007): RAM logic "TOP:DUT|dmem:DMEM_INST|mem" is uninferred due to asynchronous read logic File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dmem.vhd Line: 29
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/top_fpga.vhd Line: 22
+    Info (276007): RAM logic "TOP:DUT|MIPS:MIPS_INST|DATAPATH:DATAPATH_INST|RegFile:REGISTER_FILE|mem" is uninferred due to asynchronous read logic File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/regfile.vhd Line: 27
+    Info (276007): RAM logic "TOP:DUT|dmem:DMEM_INST|mem" is uninferred due to asynchronous read logic File: C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/src/dmem.vhd Line: 29
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 792 registers lost all their fanouts during netlist optimizations.
+Info (17049): 790 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 7725 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7737 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 7681 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 547 megabytes
-    Info: Processing ended: Sun Mar 16 19:25:09 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:15
+    Info (21061): Implemented 7693 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4916 megabytes
+    Info: Processing ended: Sun Mar 16 21:16:42 2025
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:17
 
 
