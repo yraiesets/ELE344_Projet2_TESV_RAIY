@@ -1,5 +1,5 @@
 Flow report for top_fpga
-Sun Mar 16 21:17:13 2025
+Thu Mar 20 02:51:46 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Sun Mar 16 21:17:08 2025          ;
+; Flow Status                        ; Successful - Thu Mar 20 02:51:42 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top_fpga                                       ;
 ; Top-level Entity Name              ; TOP_FPGA                                       ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/16/2025 21:16:32 ;
+; Start date & time ; 03/20/2025 02:51:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top_fpga            ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 255757346136526.174217419206856        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 255757346136526.174245346522808        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NUM_PARALLEL_PROCESSORS             ; 8                                      ; --            ; --          ; --         ;
@@ -96,11 +96,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4916 MB             ; 00:00:17                           ;
-; Fitter               ; 00:00:22     ; 1.5                     ; 5996 MB             ; 00:00:39                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4916 MB             ; 00:00:17                           ;
+; Fitter               ; 00:00:21     ; 1.5                     ; 6012 MB             ; 00:00:41                           ;
 ; Assembler            ; 00:00:02     ; 1.0                     ; 4836 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:04     ; 2.8                     ; 4994 MB             ; 00:00:10                           ;
-; Total                ; 00:00:38     ; --                      ; --                  ; 00:01:08                           ;
+; Timing Analyzer      ; 00:00:04     ; 3.1                     ; 4994 MB             ; 00:00:10                           ;
+; Total                ; 00:00:38     ; --                      ; --                  ; 00:01:10                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

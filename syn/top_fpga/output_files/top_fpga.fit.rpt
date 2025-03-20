@@ -1,5 +1,5 @@
 Fitter report for top_fpga
-Sun Mar 16 21:17:05 2025
+Thu Mar 20 02:51:38 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Sun Mar 16 21:17:05 2025          ;
+; Fitter Status                      ; Successful - Thu Mar 20 02:51:38 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; top_fpga                                       ;
 ; Top-level Entity Name              ; TOP_FPGA                                       ;
@@ -155,18 +155,18 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.47        ;
+; Average used               ; 1.53        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   6.9%      ;
-;     Processor 3            ;   6.8%      ;
-;     Processor 4            ;   6.8%      ;
-;     Processor 5            ;   6.7%      ;
-;     Processor 6            ;   6.7%      ;
-;     Processor 7            ;   6.7%      ;
-;     Processor 8            ;   6.6%      ;
+;     Processor 2            ;   7.7%      ;
+;     Processor 3            ;   7.7%      ;
+;     Processor 4            ;   7.6%      ;
+;     Processor 5            ;   7.6%      ;
+;     Processor 6            ;   7.5%      ;
+;     Processor 7            ;   7.5%      ;
+;     Processor 8            ;   7.4%      ;
 +----------------------------+-------------+
 
 
@@ -5892,19 +5892,19 @@ Info (170195): Router estimated average interconnect usage is 5% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:09
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:10
 Info (11888): Total time spent on timing analysis during the Fitter is 2.44 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
 Info (144001): Generated suppressed messages file C:/Users/yraies/Documents/ELE344_Projet2_TESV_RAIY/syn/top_fpga/output_files/top_fpga.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 5996 megabytes
-    Info: Processing ended: Sun Mar 16 21:17:06 2025
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:39
+    Info: Peak virtual memory: 6012 megabytes
+    Info: Processing ended: Thu Mar 20 02:51:39 2025
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:41
 
 
 +----------------------------+
