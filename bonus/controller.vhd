@@ -109,15 +109,15 @@ BEGIN
 						-- HexCode => X"001"
 
 			WHEN OTHERS		=>
-				RegWrite	<= '0';
-				RegDst		<= '0';
-				AluSrc		<= '0';
-				Branch		<= '0';
-				MemRead		<= '0';
-				MemWrite	<= '0';
-				MemtoReg	<= '0';
-				ALUOp		<= "00";
-				Jump		<= '0';
+				RegWrite	<= '-';
+				RegDst		<= '-';
+				AluSrc		<= '-';
+				Branch		<= '-';
+				MemRead		<= '-';
+				MemWrite	<= '-';
+				MemtoReg	<= '-';
+				ALUOp		<= "--";
+				Jump		<= '-';
 						-- HexCode => X"001"
 
 		END CASE;

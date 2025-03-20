@@ -1,6 +1,6 @@
 --========================= dmem.vhd ============================
--- ELE-343 Conception des syst?mes ordin?s
--- hiver 2017, Ecole de technologie sup?rieure
+-- ELE-343 Conception des systèmes ordinés
+-- hiver 2017, Ecole de technologie supérieure
 -- Auteur: Yves Blaquiere
 -- =============================================================
 -- Description: Memoire de donnee realise avec une memoire a
@@ -45,4 +45,3 @@ BEGIN
   -- Port de lecture combinatoire
   ReadData <= mem(to_integer(unsigned((adresse(LOG_MEM_SIZE-1 DOWNTO 0)))));
 END dmem_arch;
-

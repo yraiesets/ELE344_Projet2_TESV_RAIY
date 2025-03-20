@@ -1,64 +1,75 @@
+--========================= top_fpga.vhd ============================
+-- ELE-343 Conception des systemes ordines
+-- HIVER 2017, Ecole de technologie superieure
+-- Auteur : Yves Blaquiere
+-- Update: Hachem Bensalem, Mars 2025
+-- =============================================================
+-- Description: top_fpga modifié pour chronomètre numérique
+-- Affiche directement les valeurs des adresses 0x00002000, 0x00002004,
+-- 0x00002008, 0x0000200C sur HEX0, HEX1, HEX2, HEX3 respectivement.
+-- =============================================================
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
 ENTITY TOP_FPGA IS
-  PORT(
-    MAX10_CLK1_50   : IN STD_LOGIC;
-    KEY             : IN STD_LOGIC_VECTOR(0 TO 1);
-    HEX0            : OUT STD_LOGIC_VECTOR(0 TO 6);
-    HEX1            : OUT STD_LOGIC_VECTOR(0 TO 6);
-    HEX2            : OUT STD_LOGIC_VECTOR(0 TO 6);
-    HEX3            : OUT STD_LOGIC_VECTOR(0 TO 6);
-    HEX4            : OUT STD_LOGIC_VECTOR(0 TO 6);
-    HEX5            : OUT STD_LOGIC_VECTOR(0 TO 6)
-  );
-END TOP_FPGA;
+
+	PORT(
+		MAX10_CLK1_50 : IN STD_LOGIC;
+		KEY  : IN  STD_LOGIC_VECTOR(0 TO 1);  -- KEY[0]=reset, KEY[1]=clock
+		HEX0 : OUT STD_LOGIC_VECTOR(0 TO 6);  -- Adresse 0x00002000 (0.1 sec)
+		HEX1 : OUT STD_LOGIC_VECTOR(0 TO 6);  -- Adresse 0x00002004 (1 sec)
+		HEX2 : OUT STD_LOGIC_VECTOR(0 TO 6);  -- Adresse 0x00002008 (10 sec)
+		HEX3 : OUT STD_LOGIC_VECTOR(0 TO 6)   -- Adresse 0x0000200C (60 sec)
+	);
+
+END ENTITY TOP_FPGA;
 
 ARCHITECTURE rtl OF top_fpga IS
-  SIGNAL WriteData, DataAddress : STD_LOGIC_VECTOR(31 DOWNTO 0);
-  SIGNAL ResetIntern            : STD_LOGIC;
-  SIGNAL PC                     : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
-  SIGNAL Hundredths, Seconds, Tens, Minutes : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	SIGNAL PC                      : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL WriteData, DataAddress  : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL ResetIntern             : STD_LOGIC;
+
+	SIGNAL mem0, mem4, mem8, memC  : STD_LOGIC_VECTOR(3 DOWNTO 0);
+
 BEGIN
 
-  ResetIntern <= NOT(KEY(0));
+	ResetIntern <= NOT(KEY(0));
 
-  -- MIPS utilise l'horloge stable à 50 MHz
-  DUT : ENTITY work.TOP(rtl)
-    PORT MAP(
-      Clk         => MAX10_CLK1_50,
-      Reset       => ResetIntern,
-      PC          => PC,
-      WriteData   => WriteData,
-      DataAddress => DataAddress
-    );
+	-- Instantiation du top
+	DUT : ENTITY work.TOP(rtl)
+		PORT MAP(
+			Clk          => MAX10_CLK1_50,
+			Reset        => ResetIntern,
+			PC           => PC,
+			WriteData    => WriteData,
+			DataAddress  => DataAddress
+		);
 
-  -- Capture propre des données du MIPS pour les afficheurs
-  PROCESS(MAX10_CLK1_50, ResetIntern)
-  BEGIN
-    IF ResetIntern = '1' THEN
-      Hundredths <= (OTHERS => '0');
-      Seconds    <= (OTHERS => '0');
-      Tens       <= (OTHERS => '0');
-      Minutes    <= (OTHERS => '0');    
-    ELSIF RISING_EDGE(MAX10_CLK1_50) THEN
-      CASE DataAddress(7 DOWNTO 0) IS
-        WHEN x"00" => Hundredths <= WriteData(3 DOWNTO 0);
-        WHEN x"04" => Seconds    <= WriteData(3 DOWNTO 0);
-        WHEN x"08" => Tens       <= WriteData(3 DOWNTO 0);
-        WHEN x"0C" => Minutes    <= WriteData(3 DOWNTO 0);
-        WHEN OTHERS => NULL;
-      END CASE;
-    END IF;
-  END PROCESS;
+	-- Capture synchrone des valeurs écrites aux adresses spécifiques
+	PROCESS(DataAddress,WriteData,mem0,mem4,mem8, memC)
+	BEGIN
+			mem0 <= mem0;
+			mem4 <= mem4;
+			mem8 <= mem8;
+			memC <= memC;
+			
+			IF DataAddress = x"00002000" THEN
+				mem0 <= WriteData(3 DOWNTO 0);
+			ELSIF DataAddress = x"00002004" THEN
+				mem4 <= WriteData(3 DOWNTO 0);
+			ELSIF DataAddress = x"00002008" THEN
+				mem8 <= WriteData(3 DOWNTO 0);
+			ELSIF DataAddress = x"0000200C" THEN
+				memC <= WriteData(3 DOWNTO 0);
+			END IF;
+	END PROCESS;
 
-  -- Afficheurs 7 segments
-  dec7seg_0 : ENTITY work.dec7seg PORT MAP (HEX0, Hundredths);
-  dec7seg_1 : ENTITY work.dec7seg PORT MAP (HEX1, Seconds);
-  dec7seg_2 : ENTITY work.dec7seg PORT MAP (HEX2, Tens);
-  dec7seg_3 : ENTITY work.dec7seg PORT MAP (HEX3, Minutes);
-  dec7seg_4 : ENTITY work.dec7seg PORT MAP (HEX4, PC(5 downto 2));
-  dec7seg_5 : ENTITY work.dec7seg PORT MAP (HEX5, PC(9 downto 6));
+	-- Affichage direct sur afficheurs HEX
+	dec7seg_0 : ENTITY work.dec7seg PORT MAP (HEX0, mem0);
+	dec7seg_1 : ENTITY work.dec7seg PORT MAP (HEX1, mem4);
+	dec7seg_2 : ENTITY work.dec7seg PORT MAP (HEX2, mem8);
+	dec7seg_3 : ENTITY work.dec7seg PORT MAP (HEX3, memC);
 
-END rtl;
+END ARCHITECTURE rtl;
