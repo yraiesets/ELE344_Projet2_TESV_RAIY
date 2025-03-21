@@ -1,4 +1,0 @@
-src/*.vhd.bak
-src/*.sdc.bak
-tests/transcript
-tests/vsim.wlf
