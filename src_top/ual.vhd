@@ -63,7 +63,7 @@ BEGIN
   END PROCESS;
 
   -- Assignation des sorties
-  	zero <= '1' WHEN UNSIGNED(res) = 0 ELSE '0';
+  	zero 	<= '1' WHEN UNSIGNED(res) = 0 ELSE '0';
   	result	<= res;
   	cout	<= retenueSomme(N);
 END rtl;

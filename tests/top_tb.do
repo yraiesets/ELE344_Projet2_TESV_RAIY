@@ -1,13 +1,13 @@
 vlib work 
 
-vcom -93 -work work ../src/controller.vhd
-vcom -93 -work work ../src/regfile.vhd
-vcom -93 -work work ../src/ual.vhd
-vcom -93 -work work ../src/datapath.vhd
-vcom -93 -work work ../src/dmem.vhd
-vcom -93 -work work ../src/imem.vhd
-vcom -93 -work work ../src/mips.vhd
-vcom -93 -work work ../src/top.vhd
+vcom -93 -work work ../src_top_fpga/controller.vhd
+vcom -93 -work work ../src_top_fpga/regfile.vhd
+vcom -93 -work work ../src_top_fpga/ual.vhd
+vcom -93 -work work ../src_top_fpga/datapath.vhd
+vcom -93 -work work ../src_top_fpga/dmem.vhd
+vcom -93 -work work ../src_top_fpga/imem.vhd
+vcom -93 -work work ../src_top_fpga/mips.vhd
+vcom -93 -work work ../src_top_fpga/top.vhd
 
 vsim top
 view wave

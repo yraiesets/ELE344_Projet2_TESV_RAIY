@@ -10,8 +10,8 @@ src_top_fpga_bonus/*.sdc.bak
 syn/top/db
 syn/top/incremental_db
 syn/top/output_files
-syn/top_fpga/db
 
+syn/top_fpga/db
 syn/top_fpga/incremental_db
 syn/top_fpga/output_files
 
